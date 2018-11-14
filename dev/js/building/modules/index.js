@@ -77,11 +77,7 @@ export default class Index {
     let h = parseInt(document.querySelector('.js-img-handler').style.height)
     
     document.querySelector('.handler__texts').classList.add('show')
-    
-    window.addEventListener('scroll', (e) => {
-      console.log(document.documentElement.scrollTop + ' : ' + (document.documentElement.scrollTop / h))
-    })
-    
+   
     var controller = new ScrollMagic.Controller()
     
     new ScrollMagic.Scene({
@@ -152,9 +148,13 @@ export default class Index {
       if (ceil <= imgQuantity && ceil !== curActive && ceil >= 0) {
         if (ceil !== 0) {
           curActive = Math.ceil(scrollTop / scrollToPicture)
-          if (curActive <= 30 || curActive >= 51) {
-            leftImg.setAttribute('src', `img/main/left/${curActive}.png`)
-            rightImg.setAttribute('src', `img/main/right/${curActive}.png`)
+          if (curActive < 30 || curActive > 51) {
+            leftImg.setAttribute('src', `img/main/${curActive}.png`)
+            rightImg.setAttribute('src', `img/main/${curActive}.png`)
+          }
+          if (curActive === 30 || curActive === 51) {
+            leftImg.setAttribute('src', `img/main/${curActive}_left.png`)
+            rightImg.setAttribute('src', `img/main/${curActive}_right.png`)
           }
         }
 
