@@ -23,21 +23,9 @@ html
       +b('section').bg
         +e.left.js-bgleft(style="background-image: url('img/ileft.jpg')")
           +e('span').table(style="background-image: url('img/table.jpg')")
-          .handler__fixer
-            - var n = 1;
-            while n < 84
-              if (n === 1)
-                img.handler__img.fit(src="img/main/left/" + (n++) + ".png")
-              else
-                img.handler__img.fit.hide(src="img/main/left/" + (n++) + ".png")
+          img.handler__img.js-leftImg(src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7")
         +e.right.js-bgright(style="background-image: url('img/iright.jpg')")
-          .handler__fixer
-            - var n = 1;
-            while n < 84
-              if (n === 1)
-                img.handler__img.fit(src="img/main/right/" + (n++) + ".png")
-              else
-                img.handler__img.fit.hide(src="img/main/right/" + (n++) + ".png")
+          img.handler__img.js-rightImg(src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7")
         +e.right_f(style="background-image: url('img/iright_clear.jpg')")
       
       span.progress.js-progress
@@ -98,5 +86,19 @@ html
                 +e.img(src="img/iproducts3.png")
         .swiper-button-prev
         .swiper-button-next
+          
+    .js-imgloader
+      img(src="img/ileft.jpg")
+      img(src="img/table.jpg")
+      img(src="img/iright.jpg")
+      img(src="img/iright_clear.jpg")
+
+      - var n = 1;
+      while n < 83
+        img(src="img/main/left/" + (n++) + ".png")
+
+      - var k = 1;
+      while k < 83
+        img(src="img/main/right/" + (k++) + ".png")          
           
     include layout/__scripts

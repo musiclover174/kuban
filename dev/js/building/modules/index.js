@@ -5,11 +5,13 @@ export default class Index {
     this.block = document.querySelector('.js-loader')
     this.products = document.querySelector('.products')
     this.delay = delay
+    this.preloadBlock = document.querySelector('.js-imgloader')
   }
   preload() {
     Pace.on('hide', () => {
       fadeOut(this.block, 600, () => {
         this.block.parentNode.removeChild(this.block)
+        this.preloadBlock.parentNode.removeChild(this.preloadBlock)
         this.animate()
       })
     })
@@ -128,20 +130,21 @@ export default class Index {
     
   }
   scrollLib() {
+    // 84 - количество слайдов секвенции
     let scrollTop, ceil, percentage,
-        imgQuantity = document.querySelectorAll('.handler__img').length / 2,
+        imgQuantity = 84,
         lostFramesPerc = Math.floor(window.innerHeight / 200) / imgQuantity,
         scrollToPicture = 200 - lostFramesPerc * 200,
         curActive = 1,
         progressEl = document.querySelector('.js-progress'),
         bgLeft = document.querySelector('.js-bgleft'),
         bgRight = document.querySelector('.js-bgright'),
+        leftImg = document.querySelector('.js-leftImg'),
+        rightImg = document.querySelector('.js-rightImg'),
         _t = this
 
     document.querySelector('.js-img-handler').style.height = imgQuantity * 200 + 'px'
 
-    //this.parallax()
-    
     const onScrollHandler = function() {
       scrollTop = document.documentElement.scrollTop || document.body.scrollTop
       ceil = Math.ceil(scrollTop / scrollToPicture)
@@ -150,18 +153,12 @@ export default class Index {
         if (ceil !== 0) {
           curActive = Math.ceil(scrollTop / scrollToPicture)
           if (curActive <= 30 || curActive >= 51) {
-            for (let nHide of document.querySelectorAll('.handler__img:not(.hide)'))
-              nHide.classList.add('hide')
-
-            for (let nShow of document.querySelectorAll(`.js-bgleft .handler__img[src="img/main/left/${curActive}.png"]`))
-              nShow.classList.remove('hide')
-            for (let nShow of document.querySelectorAll(`.js-bgright .handler__img[src="img/main/right/${curActive}.png"]`))
-              nShow.classList.remove('hide')
+            leftImg.setAttribute('src', `img/main/left/${curActive}.png`)
+            rightImg.setAttribute('src', `img/main/right/${curActive}.png`)
           }
         }
 
-        // 13
-        let percWidth = Math.ceil(ceil * 100 / (imgQuantity - 0)),
+        let percWidth = Math.ceil(ceil * 100 / imgQuantity),
             percScroll = Math.ceil((scrollTop + window.innerHeight) * 100 / document.body.scrollHeight)
         
         bgLeft.style.width = (percWidth > 100 ? 100 : percWidth) + '%'
