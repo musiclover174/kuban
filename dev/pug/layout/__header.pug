@@ -1,0 +1,43 @@
+include ../bemto/bemto.pug
+
++b('header').header
+
+  +b.logo(href="#")
+    +e.img(src="img/logo.png", alt="")
+
+  +b.burger.js-burger(type="button", aria-label="открыть мобильное меню")
+    +e('span').meat
+
+  span.burger__shadow
+  
+  +e('section').popup
+    +e.popup-inner
+      +e.popup-col
+        +e('ul').popup-list
+          +e.popup-item
+            +e.popup-href.active(href="#") О бренде
+          +e.popup-item
+            +e.popup-href(href="#") Вкусы
+          +e.popup-item
+            +e.popup-href(href="#") Новости
+        +b('section').socials
+          +e('p').title А еще вы можете найти много полезной информации в наших группах в социальных сетях.
+          +e('ul').list
+            +e.item
+              +e.href(href="#", target="_blank", data-type="yt")
+            +e.item
+              +e.href(href="#", target="_blank", data-type="fb")
+            +e.item
+              +e.href(href="#", target="_blank", data-type="vk")
+            +e.item
+              +e.href(href="#", target="_blank", data-type="id")
+            +e.item
+              +e.href(href="#", target="_blank", data-type="inst")
+      +e.popup-col
+        +e('ul').popup-list
+          +e.popup-item
+            +e.popup-href(href="#") Видео
+          +e.popup-item
+            +e.popup-href(href="#") Контакты
+          +e.popup-item
+            +e.popup-href(href="#") Где купить

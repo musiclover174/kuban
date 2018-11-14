@@ -1,0 +1,335 @@
+.preloader
+  dfv(center, center)
+  pos fixed
+  z-index 5
+  full()
+  
+.informer
+  pos fixed
+  z-index 6
+  w 158px
+  white-space nowrap
+  r -104px
+  b 54px
+  pl 61px
+  font-family $sans
+  fontify 11px 700 11px
+  text-transform uppercase
+  letter-spacing .12em
+  transform rotate(-90deg)
+  transform-origin left bottom
+  overflow hidden
+  transition .7s visibility, .7s color, .7s opacity
+  &_middle
+    dn()
+  &:before
+    content ""
+    pos absolute
+    l 0
+    t 4px
+    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAABAQMAAACmH2/xAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABlBMVEUAAAD///+l2Z/dAAAAAWJLR0QB/wIt3gAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAtJREFUCNdjYIAAAAAIAAEvIN0xAAAAAElFTkSuQmCC') no-repeat 0 0
+    size 50px 1px
+    animation line 2s infinite ease-in-out 
+    transition .7s background
+    
+@keyframes line {
+  from {
+    background-position 50px 0 
+  }
+  to {
+    background-position -50px 0 
+  }
+}
+
+.opening
+  pos fixed
+  z-index 4
+  full()
+  &__img
+    pos fixed
+    t 50%
+    l 50%
+    mt -720px
+    ml -1280px
+    dn()
+    &:first-child
+      db()
+
+.bg
+  pos fixed
+  z-index 1
+  full()
+  df(stretch)
+  &__left,
+  &__right
+    pos fixed
+    h 100vh
+    t 0
+    overflow hidden
+    background-position center bottom
+    background-attachment fixed
+    background-repeat no-repeat
+    background-size cover
+  &__left
+    l 0
+    w 0
+    dfv(center, flex-end)
+    .handler__img
+      l calc((100vw - 1937px) / 2)
+  &__right
+    w 0
+    transition .7s filter
+    r 0
+    .handler__img
+      r calc((100vw - 1937px) / 2)
+    &_f
+      w 100%
+      flex-grow 1
+  &__table
+    size 2880px 70px
+    background-position center bottom
+    background-attachment fixed
+    background-repeat no-repeat
+  
+body.iload
+  .informer
+    db()
+    &:not(.informer_middle)
+      dn()
+    color white
+    &:before
+      background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAABAQMAAACmH2/xAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAA1BMVEX///+nxBvIAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAtJREFUCNdjYIAAAAAIAAEvIN0xAAAAAElFTkSuQmCC')
+          
+body.scroll 
+  .bg__right
+    w 100%
+  .bg__right_f
+    w 0
+    
+.handler
+  pos relative
+  z-index 2
+  h 0px
+  &__fixer
+    pos absolute
+    t 0
+    l 0
+    w 100%
+    h 100vh
+    pointer-events none
+    overflow hidden
+  &__img
+    pos absolute
+    b 0
+    //transform translateX(-50%)
+    &.hide
+      dn()
+  &__texts
+    &.text1
+      & ^[0]__text_text1
+        visibility visible
+        opacity 1
+        span
+          animation-name titleAnimation
+          animation-timing-function ease
+          animation-duration .7s
+        .handler__text-dsc
+          opacity 1
+          b 0
+          transition-delay .7s
+    &.text2
+      & ^[0]__text_text2
+        visibility visible
+        opacity 1
+        span
+          animation-name titleAnimation
+          animation-timing-function ease
+          animation-duration .7s
+        .handler__text-dsc
+          opacity 1
+          b 0
+          transition-delay .7s
+    &.text3
+      & ^[0]__text_text3
+        visibility visible
+        opacity 1
+        span
+          animation-name titleAnimation
+          animation-timing-function ease
+          animation-duration .7s
+        .handler__text-dsc
+          opacity 1
+          b 0
+          transition-delay .7s
+    &.text4
+      & ^[0]__text_text4
+        visibility visible
+        opacity 1
+        span
+          animation-name titleAnimation
+          animation-timing-function ease
+          animation-duration .7s
+        .handler__text-dsc
+          opacity 1
+          b 0
+          transition-delay .7s
+    &.text5
+      & ^[0]__text_text5
+        visibility visible
+        opacity 1
+        span
+          animation-name titleAnimation
+          animation-timing-function ease
+          animation-duration .7s
+        .handler__text-dsc
+          opacity 1
+          b 0
+          transition-delay .7s
+  &__text
+    pos fixed
+    w 100%
+    t 50%
+    transform translateY(-50%)
+    visibility hidden
+    opacity 0
+    color white
+    transition .35s opacity, .35s visibility
+    &_text1
+      max-width 944px
+      l 16%
+    &_text2
+      max-width 876px
+      l 22%
+    &_text3
+      max-width 895px
+      l 27%
+    &_text4
+      max-width 730px
+      l 45%
+    &_text5
+      max-width 860px
+      l 45%
+    &-title
+      fontify 96px 700 123px
+      mb 30px
+      span
+        pos relative
+        db()
+        w 100%
+        clip-path polygon(100% 0, 100% 100%, 0 100%, 0 100%)
+        -webkit-animation-fill-mode forwards
+        opacity 0
+        & + span
+          t -10px
+        /*&:first-child
+          animation-delay 0.35s
+        &:last-child
+          animation-delay 0.5s*/
+    &-dsc
+      pos relative
+      b -20px
+      fontify 28px 400 36px
+      opacity 0
+      transition .4s opacity, .4s bottom
+    
+.progress
+  pos fixed
+  z-index 3
+  l 0
+  t 0
+  w 7px
+  h 0
+  bgc #2b7308
+    
+.products
+  pos fixed
+  dfv(center, flex-end)
+  full()
+  z-index -1
+  pb 66px
+  opacity 0
+  transition .7s opacity
+  &__car
+    max-width 1254px
+    margin 0 auto
+    &.swiper-container
+      overflow visible
+    .swiper-slide
+      text-align center
+  .swiper-button-prev
+    l 54px
+  .swiper-button-next
+    r 54px
+  &__img
+    pos relative
+    t 0
+    transform scale(1)
+    will-change transform
+    transition .7s transform, .7s top
+    &:hover
+      transform scale(1.05)
+      t -20px
+    
+.icat
+  opacity 0
+  visibility hidden
+  pos fixed
+  z-index 6
+  r 0
+  b 0
+  size 130px
+  color black
+  bgc white
+  font-family $sans
+  fontify 11px 700 17px
+  text-transform uppercase
+  letter-spacing .12em
+  padding 27px 30px
+  transition .7s opacity, .7s visibility
+  &:after
+    content ""
+    pos absolute
+    size 33px 17px
+    l 31px
+    b 28px
+    background-image url('../i/arr_sprite.png')
+    background-repeat no-repeat
+    background-position 0 0
+  &:hover:after
+    animation arrAnimation 2s infinite steps(30)
+    
+
+@keyframes arrAnimation {
+  0% {
+    background-position 0 0
+  }
+  100% {
+    background-position 0 -510px
+  }
+}
+    
+body.scrollEnd 
+  .products
+    opacity 1
+    z-index 2
+  .handler
+    opacity 0
+    transition .7s opacity
+  .informer
+    visibility hidden
+    opacity 0
+    //transition-delay .7s
+  .icat
+    opacity 1
+    visibility visible
+    
+@keyframes titleAnimation {
+  0% {
+    opacity 0
+    clip-path polygon(100% 0, 100% 100%, 0 100%, 0 100%)
+  }
+  100% {
+    opacity 1
+    clip-path polygon(100% 0, 100% 100%, 0 100%, 0 15%)
+  }
+}

@@ -1,0 +1,216 @@
+.header
+  pos relative
+  z-index 3
+  &__popup
+    pos fixed
+    z-index 1
+    t 0
+    l -100%
+    w 100%
+    h 100%
+    overflow auto
+    df(center)
+    opacity 0
+    transition .7s opacity
+    &-inner
+      df()
+      w 100%
+      padding 60px 200px
+      max-width 1744px
+      margin 0 auto
+    &-list
+      dfv()
+    &-col
+      w calc(50% - 30px)
+      & + &
+        ml 60px
+    &-item
+      & + &
+        mt 30px
+    &-href
+      pos relative
+      l 0
+      color #6c3225
+      fontify 96px 700 100px
+      transition .7s color, .7s left
+      &.active
+        color black
+      &:hover
+        l 20px
+        
+.socials
+  &__title
+    fontify 28px 400 36px
+    mt 150px
+    max-width 435px
+  &__list
+    mt 45px
+    df(center, flex-start)
+  &__item
+    & + &
+      ml 60px
+  &__href
+    ib()
+    transition .7s opacity
+    &:hover
+      opacity .5
+    &[data-type="yt"]
+      size 29px 22px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAWCAMAAAALimf+AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAulBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///+rmkzhAAAAPHRSTlMALoqtu8XM3eTu8WH7GfhupsfI1Pnc5ngj/uzwOPf9AVngBnT6McIUmQRv7+VF1aVsF11eecvZ6b2rhyv5/dTlAAAAAWJLR0Q90G1RWQAAAAlwSFlzAAALEgAACxIB0t1+/AAAAL9JREFUKM990tcSgjAQBdArAjFIUwEVxd4bYMGW//8uxRcSRnLfds5ks9kJgJpSVzWdNKjB8hi0QXRNrSs1fNM02f+YTcCyWVVsCw6rjgNXoi5aEm2DFEXHK6mPoCi6PbcvaIgBp8BQuCjCSFCMJ1OOwUQFZvOFRJcr7myp83oz4jsLU213e3GqA6fHk/jeEH5RBKwUX7rJFmKJxkgkmiCNKjFKgbNXgYtLvpzeNVZvGTnQ37ezKb2TTH88X2/gA81Afj+chWlsAAAAAElFTkSuQmCC') no-repeat center
+    &[data-type="fb"]
+      size 26px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAclBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///+aXNWMAAAAJHRSTlMAH6jzIeipgC0LDhk87yoeZ/oNEk5VadoE4NIdcxECXHGSs/KAg5rFAAAAAWJLR0QlwwHJDwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAItJREFUKM+10ssSgjAMBdDbhiLiA0UFfMQX/f9vNMw4Dm3Jwhm9qyRnk8UFjCWfhKwBMucn4zLkXkkO0ogQH2bFvFwshzGi1RpDqgnaQKNtLffd/tCk1Ip0x/cS0kno7FWqvqMLcyl0ZeZbRA0+uev00On5kw//T6QRhbUZkw3LNiInRTS2T6mXir4AnrxK6tJtOmMAAAAASUVORK5CYII=') no-repeat center
+    &[data-type="vk"]
+      size 34px 20px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAUCAMAAADfuh9AAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABOFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///+nC5elAAAAZnRSTlMADCIJJK3l9O/LSBEH5+YUV9jVEOrduHoT82zOR+S8AWLPaaXhTgNU4JrbAtD7Ntd4ltJqgFkgqNQZw8DIve0eRfxrrFCvsyH2e3LfHN43+Mxo4hVM9znjvwT6LfAPjELr+X4wvo5/GLI3AAAAAWJLR0RnW9PpswAAAAlwSFlzAAALEgAACxIB0t1+/AAAASZJREFUKM9tkGdXwkAQRZ+IEpWgIiqxISpRiQUbqKgg2LHGjhXL/v+fYHZmY/ZD3qc7b+6ZswnaIjLt8BLt6IwJYXR1g9JDm0gcppBJ9HpdXz+xSJIxkOJpEEMMw7JNW8QGKSO8EKMYYxiPy3qC2JSYSSplEpks05TspwlnJOaUkbWBWcY5eWaeMO+Rs8D14pIclnkoeLxCtOrRmjqyTu/a4MEqAiWiTWDL4HLbJsVRrynb2CFIwd7laq/CvwhVdbSU22eo1VVzAD+HIjxH/waOT8KV00DBWbhiFgPFLoc7jUrgnCfCnQvNubzSFtc3ro/528C5uw+UB0QffX561u40/LbpAC+v/lTQPuvtXR1y5fRhKeUTetK1utsSzS8avn9a0oj9/gHWYKQAXLUswQAAAABJRU5ErkJggg==') no-repeat center
+    &[data-type="id"]
+      size 17px 28px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAcCAMAAACwLaQWAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABPlBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD////xZo/sAAAAaHRSTlMAAFOx5/jotVYaw8ke7ctEiluG9UujLSis1JaN299vY+XPp6DVUkyfMbmLOK4Fx84Jl50DKYe+v4ksFLqbGBbkva37q2E2YKn5uOpXXj3EQjOA5oI1IDDz9jsO7hzj9BIdGeJF+tzZ6dkQmtsAAAABYktHRAH/Ai3eAAAACXBIWXMAAAsSAAALEgHS3X78AAABHElEQVQY012QZ1sCMQyAg3KHh4e4lWnBhQtFQVFkiJ6eAycoThyo/f+/wCS9QzQfmrfv0zZJASh6er2a7usj9NBi+KWKflMZQ5duBEw2fvkbA2SCRNrg0PAIwSiaMRLjeHaC1CSaEOYwV4wgRdHEMMfZTCEJNAnMSTbTSDNowvTgLIo5gnk0KS67sOjjvET9JLv6WeYOV9Idsbqm5oKMI9Y3nEkBsrnNxFZ+W82+UxC7ReWhlClXirCHp6v7B1bWOjyykY8hKv/GCZz+M2cAtfOuffqCa11elXl7fVN3qxuCjd5wf/72zrnTdM7Um51n7HsyKY1YBOnnZNXywMMjkbcBT88ELy2osXjF22/vhB/QEm3701Qlv+z2d+kHwE1txmQJp3AAAAAASUVORK5CYII=') no-repeat center
+    &[data-type="inst"]
+      size 26px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAArlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///9ednW3AAAAOHRSTlMAJJrk/OGXY/j5aGZpIfeWTX0lq3vgfEvi63ktBy/EA5j+rA8Ofq4B6ukGDC4NLAULMSJnZGXfldkByaYAAAABYktHRDnXAJVAAAAACXBIWXMAAAsSAAALEgHS3X78AAAAzElEQVQoz43S5xKCMBAE4EVRsSBiQWkKiL33e/8nE4Q4YUIc9x/7MZkjHAAolSrxUWt1BZ80NBLSbKXSptJ0AL0rtEbPbJLWhyHIIDlqmLyAkUBWQmOiCVTW2I7reb5p03QGBEQhmETzbN44oulimTaMohXyrKK8ymkd45t4UyATXJwC+Ty5BfJ42sppJz9w/+8YG/nwPz45ue9DJgcmxF/v8XS+WDZ7Dkt+Sp4JKjIycNXKRdOBm3RtgLu4ONR9ZPMqQS3k+/D5Slf0DW4uZT46dZHcAAAAAElFTkSuQmCC') no-repeat center
+
+.burger
+  pos fixed
+  z-index 2
+  r 0
+  t 0
+  size 130px
+  bgc white
+  cursor pointer
+  transition .7s transform
+  will-change transform
+  &:before
+    content ""
+    pos absolute
+    l 54px
+    t 50px
+    size 30px 1px
+    bgc black
+    transition .5s width, .5s background, .5s transform, .5s top
+  &__meat
+    content ""
+    pos absolute
+    l 54px
+    t 64px
+    size 30px 1px
+    bgc black
+    transition .5s width, .5s background, .5s transform, .5s top  
+  &:after
+    content ""
+    pos absolute
+    l 54px
+    b 53px
+    size 30px 1px
+    bgc black
+    transition .5s width, .5s background, .5s transform, .5s bottom 
+  &:not(.open):hover
+    &:before
+      t 47px
+    &:after
+      b 50px
+  &:not(.open):hover &__meat
+    animation burger-hover 1s infinite ease-in-out alternate forwards 200ms
+  &.open
+    &:before
+      animation burger-top 1s ease-in-out forwards
+    &:after
+      animation burger-bottom 1s ease-in-out forwards
+    & ^[-1]__meat
+      opacity 0
+  &.open.remove
+    &:before
+      animation burger-top-invert 1s ease-in-out forwards
+    &:after
+      animation burger-bottom-invert 1s ease-in-out forwards
+    & ^[-1]__meat
+      opacity 1
+      transition .4s opacity .6s
+  &__shadow
+    bgc white
+    pos fixed
+    b 0
+    l 0
+    w 100%
+    h 0
+    transition .7s height
+      
+@keyframes burger-top
+  0%
+    t 50px
+  40%
+    t 65px
+  60%
+    t 65px
+    transform rotate(0)
+  100%
+    t 65px
+    transform rotate(45deg)
+    
+@keyframes burger-bottom
+  0%
+    b 53px
+  40%
+    b 64px
+  60%
+    b 64px
+    transform rotate(0)
+  100%
+    b 64px
+    transform rotate(-45deg)
+
+@keyframes burger-top-invert
+  0%
+    t 65px
+    transform rotate(45deg)
+  40%
+    t 65px
+    transform rotate(0)
+  60%
+    t 65px
+  100%
+    t 50px
+    
+@keyframes burger-bottom-invert
+  0%
+    b 64px
+    transform rotate(-45deg)
+  40%
+    b 64px
+    transform rotate(0)
+  60%
+    b 64px
+  100%
+    b 53px
+      
+.logo
+  pos fixed
+  z-index 2
+  t 53px
+  l 44px
+  
+.index .logo
+  filter brightness(0) invert(1)
+  transition .7s filter
+  
+body.burgeropen
+  .logo
+    filter none
+  .burger__shadow
+    height 100%
+  .header__popup
+    l 0
+    opacity 1
+    transition-delay .7s
+    
+html.touchevents
+  .burger
+    &:not(.open):hover
+      &:before
+        animation none
+      .burger__meat
+        animation none
+      &:after
+        animation none
+    &:not(.open):hover .burger__meat
+      animation none
