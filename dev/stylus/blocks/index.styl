@@ -58,6 +58,7 @@
 .bg
   pos fixed
   z-index 1
+  bgc black
   full()
   df(stretch)
   &__left,
@@ -77,6 +78,8 @@
     .handler__img
       l calc((100vw - 1937px) / 2)
   &__right
+    &:not(&_f)
+      dn()
     w 0
     transition .7s filter
     r 0
@@ -85,6 +88,7 @@
     &_f
       w 100%
       flex-grow 1
+      opacity .5
   &__table
     size 2880px 70px
     background-position center bottom
@@ -103,6 +107,7 @@ body.iload
 body.scroll 
   .bg__right
     w 100%
+    db()
   .bg__right_f
     w 0
     
@@ -132,11 +137,11 @@ body.scroll
         span
           animation-name titleAnimation
           animation-timing-function ease
-          animation-duration .7s
+          animation-duration 2.7s
         .handler__text-dsc
           opacity 1
           b 0
-          transition-delay .7s
+          transition-delay 1.7s
     &.text2
       & ^[0]__text_text2
         visibility visible

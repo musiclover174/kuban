@@ -1,7 +1,7 @@
 import {fadeOut} from './helpers'
 
 export default class Index {
-  constructor(delay) {
+  constructor(delay = 25) {
     this.block = document.querySelector('.js-loader')
     this.products = document.querySelector('.products')
     this.delay = delay
@@ -126,9 +126,9 @@ export default class Index {
     
   }
   scrollLib() {
-    // 84 - количество слайдов секвенции
+    // 83 - количество слайдов секвенции
     let scrollTop, ceil, percentage,
-        imgQuantity = 84,
+        imgQuantity = 83,
         lostFramesPerc = Math.floor(window.innerHeight / 200) / imgQuantity,
         scrollToPicture = 200 - lostFramesPerc * 200,
         curActive = 1,

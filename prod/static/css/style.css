@@ -1763,6 +1763,7 @@ html.touchevents .burger:not(.open):hover .burger__meat {
 .bg {
   position: fixed;
   z-index: 1;
+  background-color: #000;
   top: 0;
   right: 0;
   bottom: 0;
@@ -1816,6 +1817,9 @@ html.touchevents .burger:not(.open):hover .burger__meat {
   transition: 0.7s filter, 0.7s -webkit-filter;
   right: 0;
 }
+.bg__right:not(.bg__right_f) {
+  display: none;
+}
 .bg__right .handler__img {
   right: calc((100vw - 1937px) / 2);
 }
@@ -1824,6 +1828,7 @@ html.touchevents .burger:not(.open):hover .burger__meat {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+  opacity: 0.5;
 }
 .bg__table {
   width: 2880px;
@@ -1844,6 +1849,7 @@ body.iload .informer:before {
 }
 body.scroll .bg__right {
   width: 100%;
+  display: block;
 }
 body.scroll .bg__right_f {
   width: 0;
@@ -1878,14 +1884,14 @@ body.scroll .bg__right_f {
   animation-name: titleAnimation;
   -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
+  -webkit-animation-duration: 2.7s;
+  animation-duration: 2.7s;
 }
 .handler__texts.text1 .handler__text_text1 .handler__text-dsc {
   opacity: 1;
   bottom: 0;
-  -webkit-transition-delay: 0.7s;
-  transition-delay: 0.7s;
+  -webkit-transition-delay: 1.7s;
+  transition-delay: 1.7s;
 }
 .handler__texts.text2 .handler__text_text2 {
   visibility: visible;
