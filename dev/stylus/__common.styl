@@ -3,55 +3,103 @@ body
   font-family $os
 body
   overflow-x hidden
-  &:not(.pace-done)
+  &.index:not(.pace-done)
     overflow hidden
       
+body.index .content
+  padding 0
+  
+body:not(.index) .logo
+  pos absolute
+    
 .container
   w 100%
-  max-width 1170px
+  max-width 1344px
   margin 0 auto
-    
+  @media $lDesktopSmall
+    max-width 1180px
+  @media $desktopMax
+    max-width 100%
 .content
+  min-height calc(100vh - 130px)
+  pt 132px
+  pb 142px
+  bgc #f9f9f9
+  @media $desktopMax
+    pl 55px
+    pr 55px
+  @media $desktopTablet
+    pt 190px
+    pl 30px
+    pr 30px
+  @media $PortraitMedium
+    pt 140px
+  &_text
+    .container
+      min-height 100%
+      mt -132px
+      mb -142px
+      pt 132px
+      pb 142px
+      bgc white
+      @media $desktopTablet
+        mt 0
+        mb 0
+        pt 0
+        pb 0
+        bgc transparent
   h1:not([class])
-    color $dark
-    font-family $slab
-    fontify 48px 700 53px
-    margin 43px 0 35px
+    color $red
+    fontify 96px 700 100px
+    margin 63px 0 35px
+    text-align center
+    @media $desktopMedium
+      fontify 80px 700 84px
+    @media $LandscapeMin
+      fontify 60px 700 64px
+    @media $PortraitMedium
+      fontify 35px 700 40px
   h2:not([class])
-    color $dark
-    font-family $slab
-    fontify 36px 700 43px
-    margin 43px 0 28px
-  h3:not([class])
-    color $dark
-    font-family $slab
-    fontify 30px 700 37px
-    margin 43px 0 31px
+    color black
+    fontify 48px 400 56px
+    margin 63px 0 -3px
+    @media $desktopMedium
+      fontify 40px 400 48px
+    @media $LandscapeMin
+      fontify 36px 400 44px
+    @media $PortraitMedium
+      fontify 30px 400 38px
+  h3:not([class]),
   h4:not([class])
-    color $dark
-    font-family $slab
-    fontify 24px 700 33px
-    margin 43px 0 17px
+    color black
+    fontify 36px 400 44px
+    margin 63px 0 20px
+    @media $desktopMedium
+      fontify 30px 400 38px
+    @media $LandscapeMin
+      fontify 26px 400 34px
   img:not([class])
-    margin 16px 0
+    margin 4px 0
     max-width 100%
   ul:not([class])
     list-style  none
     margin  18px 0
   ul:not([class]) li
+    font-family $sans
     pl 30px
     pos relative
-    fontify 16px 300 24px
+    fontify 18px 400 26px
+    @media $desktopMedium
+      fontify 17px 400 25px
   ul:not([class]) li + li
-    mt 16px
+    mt 24px
   ul:not([class]) > li:before
     content ""
     pos absolute
     l 0
-    t 7px
-    size 7px
-    border-radius 50%
-    bgc $blue
+    t 14px
+    size 20px 1px
+    bgc $green
   ol:not([class])
     list-style none
     margin 18px 0 30px
@@ -59,7 +107,10 @@ body
   ol:not([class]) li
     pl 30px
     pos relative
-    fontify 16px 300 24px
+    font-family $sans
+    fontify 18px 400 26px
+    @media $desktopMedium
+      fontify 17px 400 25px
   ol:not([class]) li + li
     mt 16px
   ol:not([class]) > li:before
@@ -70,15 +121,19 @@ body
     t 0
     w 30px
     pr 9px
-    color $blue
-    fontify 16px 700 24px
+    color $green
+    font-family $sans
+    fontify 18px 700 26px
   p:not([class])
-    color $dark
-    fontify 16px 300 24px
-    margin 18px 0
+    font-family $sans
+    fontify 18px 400 26px
+    margin 25px 0
+    @media $desktopMedium
+      fontify 17px 400 25px
   a:not([class])
-    color $blue
-    border-bottom 1px solid alpha($blue, .4)
+    font-family $sans
+    color $green
+    border-bottom 1px solid alpha($green, .4)
     transition .5s border
     &:hover
       border-color transparent
@@ -89,20 +144,14 @@ body
     margin-bottom 0 !important
 
   table
-    th
-      text-align left
-      padding 18px 24px
-      color white
-      fontify 16px 300 24px
-      bgc $blue
+    font-family $sans
+    border 2px solid $green
+    margin 30px 0
     td
-      padding 14px 24px
+      padding 20px 24px
       color $dark
-      fontify 16px 300 24px
-      border 1px solid #e8ebf5
-    tbody
-      border 2px solid #e8ebf5
-      border-top 0
+      fontify 15px 400 21px
+      border 1px solid #e9f1e6
 
 input::-webkit-input-placeholder
   color alpha(white, .5)
@@ -119,6 +168,14 @@ div[class\^="table-scroller"]
     mb 36px
   @media $desktopMax
     w 100%
+
+.text
+  max-width 876px
+  margin 0 auto
+  @media $desktopMax
+    max-width 764px
+  @media $desktopTablet
+    max-width 100%
     
 .common
   &__input
@@ -321,6 +378,28 @@ div[class\^="table-scroller"]
     &.warning + ^[0]__label:before 
       border-color #ff0f37
 
+.breadcrumbs
+  font-family $sans
+  text-align center
+  pl 18px
+  mb 70px
+  color black
+  &__href
+    color black
+    fontify 11px 700 14px
+    text-transform uppercase
+    letter-spacing .12em
+    border-bottom 1px solid alpha(black, .25)
+    transition .5s border
+    &:hover
+      border-color transparent
+  &__delim
+    fontify 11px 700 14px
+    margin 0 5px
+
+h1:not([class]) + .breadcrumbs
+  mt -6px
+      
 input.warning,
 textarea.warning
   border-color #ff0f37

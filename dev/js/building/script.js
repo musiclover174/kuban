@@ -1,15 +1,32 @@
-import {fadeIn, fadeOut, scrollTo, visChecker} from './modules/helpers'
+import {fadeIn, fadeOut, scrollTo, visChecker, resizeWatcher} from './modules/helpers'
 import Index from './modules/index'
 import Burger from './modules/burger'
+import Contacts from './modules/contacts'
+import Sticky from './modules/sticky'
 
 document.addEventListener('DOMContentLoaded', function(){
   
   const burger = new Burger()
   
   if (document.body.classList.contains('index')) {
-    const index = new Index()
+    const index = new Index(300)
     index.preload()
   }
+  
+  if (document.querySelector('.js-contacts-map')) {
+    const contacts = new Contacts('contacts-map')
+    contacts.init()
+  }
+  
+  if (document.querySelector('.js-sticky')) {
+    const sticky = new Sticky(20, 0)
+  }
+  
+  for (let sh of document.querySelectorAll('.js-shave')) {
+    shave(sh, sh.getAttribute('data-height'))
+  }
+  
+  new resizeWatcher()
   
   let eventScroll
   try {

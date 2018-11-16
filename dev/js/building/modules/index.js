@@ -128,7 +128,7 @@ export default class Index {
   scrollLib() {
     // 83 - количество слайдов секвенции
     let scrollTop, ceil, percentage,
-        imgQuantity = 83,
+        imgQuantity = 100,
         lostFramesPerc = Math.floor(window.innerHeight / 200) / imgQuantity,
         scrollToPicture = 200 - lostFramesPerc * 200,
         curActive = 1,
@@ -148,11 +148,11 @@ export default class Index {
       if (ceil <= imgQuantity && ceil !== curActive && ceil >= 0) {
         if (ceil !== 0) {
           curActive = Math.ceil(scrollTop / scrollToPicture)
-          if (curActive < 30 || curActive > 51) {
+          if (curActive < 36 || curActive > 61) {
             leftImg.setAttribute('src', `img/main/${curActive}.png`)
             rightImg.setAttribute('src', `img/main/${curActive}.png`)
           }
-          if (curActive === 30 || curActive === 51) {
+          if (curActive === 36 || curActive === 61) {
             leftImg.setAttribute('src', `img/main/${curActive}_left.png`)
             rightImg.setAttribute('src', `img/main/${curActive}_right.png`)
           }

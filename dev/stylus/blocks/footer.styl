@@ -1,0 +1,64 @@
+.footer
+  padding 0 53px
+  h 130px
+  bgc white
+  df(center, space-between)
+  overflow hidden
+  @media $LandscapeMin
+    padding 0 30px
+  @media $PortraitMedium
+    flex-direction column
+    justify-content center
+    h 224px
+  &__side
+    df(center)
+    @media $LandscapeMin
+      flex-direction column
+      align-items flex-start
+    @media $PortraitMedium
+      mb 25px
+  &__copy
+    font-family $sans
+    fontify 11px 700 11px
+    text-transform uppercase
+    letter-spacing .12em
+    @media $LandscapeMin
+      mb 21px
+    @media $PortraitMedium
+      w 100%
+      text-align center
+  .socials
+    ml -11px
+    transform scale(.5)
+    @media $LandscapeMin
+      ml -91px
+    @media $PortraitMedium
+      margin 0 auto
+    &__list
+      mt 0
+      @media $PortraitMedium
+        transform scale(1)
+  &__dextra
+    pos relative
+    color silver
+    font-family Verdana, Geneva, sans-serif
+    fontify 9px 400 14px
+    text-transform uppercase
+    letter-spacing 0.18em
+    @media $PortraitMedium
+      l 42px
+    span
+      pos absolute
+      t 3px
+      r calc(100% + 10px)
+      bgc #dfdfdf
+      color white
+      font-family Arial
+      fontify 12px 900 21px
+      text-transform uppercase
+      letter-spacing 0.1em
+      border-radius 3px
+      padding 0 6px
+      transition 0.7s background
+    &:hover span
+      background-color $green

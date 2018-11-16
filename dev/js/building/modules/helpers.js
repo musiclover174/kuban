@@ -69,4 +69,28 @@ function visChecker(el) {
   )
 }
 
-export {fadeIn, fadeOut, scrollTo, visChecker}
+function resizeWatcher() {
+  const tableSel = document.querySelectorAll('table'),
+        scrollArray = [];
+  if (tableSel.length) {
+    tableSel.forEach((item, i) => {
+      let orgHtml = item.outerHTML
+
+      item.outerHTML = `<div class='table-scroller${i}'>${orgHtml}</div>`;
+      let ps = new PerfectScrollbar(`.table-scroller${i}`, {
+        wheelPropagation: true
+      })
+      
+      scrollArray.push(ps);
+    })
+    window.addEventListener('resize', () => {
+      if (scrollArray.length)
+        scrollArray.forEach((item, i) => {
+          item.update()
+        })
+    })
+  }
+
+}
+
+export {fadeIn, fadeOut, scrollTo, visChecker, resizeWatcher}

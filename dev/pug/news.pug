@@ -1,0 +1,62 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+  
+    +b('main').content
+      .container
+        +b('section').news.js-sticky-parent
+          +e('aside').aside.js-sticky
+            +e.sticky.js-sticky-inner
+              h1 Новости
+              +b('section').breadcrumbs
+                +e.href(href="#") Главная
+                +e('span').delim / 
+                
+          +e('ul').list
+            +e.item._large
+              +e.imgover(href="#")
+                +e.img.fit(src="img/news1.jpg")
+              +e.content
+                +e('p').date 01 сентября
+                +e.href(href="#")
+                  span.js-shave(data-height="88") Заслуженная награда «Сделано на Кубани» Заслуженная награда «Сделано на Кубани»
+                +e('p').about.js-shave(data-height="75") Южная Соковая Компания получила диплом и право на использование знака «Сделано на Кубани». Только 46 предприятий Краснодарского края удостоились такой награды. Только 46 предприятий Краснодарского края удостоились такой награды. Только 46 предприятий Краснодарского края удостоились такой награды.
+            +e.item
+              +e.imgover(href="#")
+                +e.img.fit(src="img/news2.jpg")
+              +e.content
+                +e('p').date 03 августа
+                +e.href(href="#")
+                  span.js-shave(data-height="76") Новые видеоролики Дары Кубани - подарок природы! Новые видеоролики Дары Кубани - подарок природы!
+            +e.item
+              +e.imgover(href="#")
+                +e.img.fit(src="img/news3.jpg")
+              +e.content
+                +e('p').date 28 июня
+                +e.href(href="#")
+                  span.js-shave(data-height="76") Интересно знать!
+            +e.item
+              +e.imgover(href="#")
+                +e.img.fit(src="img/news1.jpg")
+              +e.content
+                +e('p').date 14 мая
+                +e.href(href="#")
+                  span.js-shave(data-height="76") Заслуженная награда «Сделано на Кубани»
+            +e.item
+              +e.imgover(href="#")
+                +e.img.fit(src="img/news2.jpg")
+              +e.content
+                +e('p').date 03 августа
+                +e.href(href="#")
+                  span.js-shave(data-height="76") Новые видеоролики Дары Кубани - подарок природы!
+          
+        include blocks/pagination
+        
+    include layout/__footer
+    
+    include layout/__scripts

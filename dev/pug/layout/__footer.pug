@@ -1,0 +1,20 @@
+include ../bemto/bemto.pug
+
++b('footer').footer
+  +e('aside').side
+    +e('span').copy © «Дары Кубани», 2018
+    +b.socials
+      +e('ul').list
+        +e.item
+          +e.href(href="#", target="_blank", data-type="yt")
+        +e.item
+          +e.href(href="#", target="_blank", data-type="fb")
+        +e.item
+          +e.href(href="#", target="_blank", data-type="vk")
+        +e.item
+          +e.href(href="#", target="_blank", data-type="id")
+        +e.item
+          +e.href(href="#", target="_blank", data-type="inst")
+  +e.dextra(href="https://www.dextra.ru/", target="_blank")
+    span dextra
+    | Разработка<br>сайта

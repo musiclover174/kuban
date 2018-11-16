@@ -1,0 +1,68 @@
+.pagination
+  display flex
+  justify-content center
+  align-items flex-start
+  mt 25px
+  transition .7s background
+  &__prev,
+  &__next
+    ib()
+    pos relative
+    size 130px
+    bgc white
+    outline none
+    @media $LandscapeMax
+      size 70px
+      bgc transparent
+    @media $LandscapeMin
+      dn()
+    &:after
+      content ""
+      pos absolute
+      size 33px 17px
+      l 50%
+      t 50%
+      background-image url('../i/arr_sprite.png')
+      background-repeat no-repeat
+      background-position 0 0
+      transform translate(-50%, -50%)
+    &:not(.disabled):hover
+      background transparent
+    &:not(.disabled):hover:after
+      animation arrAnimation 2s infinite steps(30)
+    &.disabled
+      dn()
+  &__prev
+    transform scaleX(-1)
+  &__list
+    display flex
+  &__item
+    bgc white
+    text-align center
+    fontify 24px 400 30px
+    size 130px
+    display flex
+    align-items center
+    justify-content center
+    transition .7s background
+    @media $LandscapeMax
+      size 70px
+      bgc transparent
+    @media $PortraitMax
+      size 50px
+    &:hover,
+    &.active
+      background-color transparent
+    &-href
+      size 130px
+      pos relative
+      c black
+      fontify 24px 400 130px
+      transition .7s border
+      @media $LandscapeMax
+        w auto
+        h auto
+        line-height 24px
+        border-bottom 1px solid alpha(black, .25)
+        &:hover
+          border-color transparent

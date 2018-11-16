@@ -1,0 +1,93 @@
+.contacts
+  &__info
+    df()
+    ml -60px
+    w calc(100% + 60px)
+    @media $lDesktopSmall
+      ml -48px
+      w calc(100% + 48px)
+    @media $LandscapeMin
+      ml -34px
+      w calc(100% + 34px)
+    @media $PortraitMedium
+      flex-direction column
+  &__col
+    df()
+    ml 60px
+    flex-grow 0
+    @media $lDesktopSmall
+      ml 48px
+      flex-direction column
+    @media $LandscapeMin
+      ml 34px
+    @media $PortraitMedium
+      & + &
+        mt 30px
+    &:first-child
+      w calc(200% / 3 - 60px)
+      @media $lDesktopSmall
+        w calc(200% / 3 - 48px)
+      @media $LandscapeMin
+        w calc(50% - 34px)
+      @media $PortraitMedium
+        w calc(100% - 34px)
+    &:last-child
+      w calc(100% / 3 - 60px)
+      @media $lDesktopSmall
+        w calc(100% / 3 - 48px)
+      @media $LandscapeMin
+        w calc(50% - 34px)
+      @media $PortraitMedium
+        w calc(100% - 34px)
+  &__mapover
+    mt 74px
+    mb -142px
+    w 100vw
+    h 50vh
+    pos relative
+    l 50%
+    transform translateX(-50%)
+  &__map
+    w 100%
+    h 100%
+  &__title
+    font-family $sans
+    color black
+    fontify 11px 700 11px
+    text-transform uppercase
+    letter-spacing .12em
+    mb 10px
+  &__text
+    fontify 20px 400 28px
+    @media $desktopMedium
+      fontify 18px 400 26px
+    @media $PortraitMedium
+      fontify 17px 400 25px
+  &__addresses,
+  &__communication
+    w calc(50% - 30px)
+    @media $lDesktopSmall
+      w 100%
+    & + &
+      ml 60px
+      @media $lDesktopSmall
+        ml 0
+        mt 30px
+  &__tel
+    color black
+    fontify 20px 400 28px
+    @media $desktopMedium
+      fontify 18px 400 26px
+    @media $PortraitMedium
+      fontify 17px 400 25px
+  &__mail
+    color black
+    fontify 20px 400 28px
+    border-bottom 1px solid
+    transition .7s border
+    @media $desktopMedium
+      fontify 18px 400 26px
+    @media $PortraitMedium
+      fontify 17px 400 25px
+    &:hover
+      border-color transparent

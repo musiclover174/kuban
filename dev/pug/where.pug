@@ -1,0 +1,41 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+  
+    +b('main').content
+      .container
+        h1 Где купить
+        +b('section').breadcrumbs
+          +e.href(href="#") Главная
+          +e('span').delim / 
+      
+        +b('section').where
+          +e('p').title На сегодняшний день соки и нектары «Дары Кубани» можно приобрести в десятках магазинов крупных мегаполисов и небольших городов. С нами работают ведущие торговые сети.
+          +e('ul').list
+            +e.item
+              +e.img(src="img/where1.png")
+            +e.item
+              +e.img(src="img/where2.png")
+            +e.item
+              +e.img(src="img/where3.png")
+            +e.item
+              +e.img(src="img/where4.png")
+            +e.item
+              +e.img(src="img/where5.png")
+            +e.item
+              +e.img(src="img/where6.png")
+            +e.item
+              +e.img(src="img/where7.png")
+            +e.item
+              +e.img(src="img/where8.png")
+            +e.item
+              +e.img(src="img/where9.png")
+      
+    include layout/__footer
+    
+    include layout/__scripts

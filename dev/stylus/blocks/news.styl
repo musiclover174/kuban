@@ -1,0 +1,184 @@
+.news
+  df()
+  mt 480px
+  pt 18px
+  @media $desktopMax
+    mt 400px
+  @media $LandscapeMax
+    pt 0
+    mt 0
+    flex-direction column
+  & + .pagination
+    mb -142px
+    @media $LandscapeMax
+      mb 0
+  &__list,
+  &__aside
+    w calc(50% - 30px)
+    @media $desktopMax
+      w calc(50% - 24px)
+    @media $LandscapeMax
+      w 100%
+  &__sticky
+    @media $LandscapeMax
+      position relative !important
+      top 0 !important
+      left 0 !important
+      width 100% !important
+  &__list
+    ml 60px
+    mt -480px
+    &_videos
+      & ^[0]__imgover
+        &:before
+          content ""
+          pos absolute
+          size 55px
+          z-index 1
+          b 30px
+          l 30px
+          bgc white
+          border-radius 50%
+          will-change transform
+          transition .7s transform
+          @media $LandscapeMin
+            size 39px
+            l 20px
+            b 20px
+        &:after
+          content ""
+          pos absolute
+          z-index 2
+          b 50px 
+          l 55px
+          size 8px 15px
+          background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAPCAMAAADu1H4BAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAVFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8UXluqAAAAGnRSTlMApjjmNELjMEfkLEsoUuAkViKWwFVRJSktOQQ4n1IAAAABYktHRBsCYNSkAAAACXBIWXMAAAsSAAALEgHS3X78AAAASElEQVQI11XNNw7AMAxDUTrFjlPk9Hb/g2b4WqJFDwREKVRi3rpxtDEBdbkHGuIINFkBmm0BWjewe3LY6VcXPfGmOaf/r/CwP8lWAxVdYSW1AAAAAElFTkSuQmCC') no-repeat center
+          @media $LandscapeMin
+            b 32px
+            l 37px
+        &:hover:before
+          transform scale(1.1)
+      & ^[0]__href
+        border-bottom-style dotted
+    @media $desktopMax
+      mt -400px
+      ml 48px
+    @media $LandscapeMax
+      ml 0
+      mt 0
+  &__aside
+    @media $LandscapeMaxFrom
+      .breadcrumbs,
+      h1:not([class])
+        text-align left
+      .breadcrumbs
+        pl 0
+      h1:not([class])
+        ml -4px
+    @media $LandscapeMax
+      height auto !important
+  &__item
+    df()
+    w 100%
+    mb 30px
+    @media $LandscapeMaxFrom
+      &_large
+        w calc(200% + 60px)
+        ml calc(-100% - 60px)
+        mb 54px
+        @media $desktopMax
+          mb 46px
+          w calc(200% + 48px)
+          ml calc(-100% - 48px)
+      &_large ^[0]__imgover
+        w calc(50% - 30px)
+        h 345px
+        @media $desktopMax
+          h 300px
+      &_large ^[0]__content
+        w calc(50% + 90px)
+        padding 61px 50px 60px 120px
+        min-height 347px
+        @media $desktopMax
+          w calc(50% + 78px)
+          padding 46px 50px 53px 95px
+          min-height 236px
+      &_large ^[0]__date
+        mb 11px
+      &_large ^[0]__href
+        fontify 36px 400 44px
+        @media $desktopMax
+          fontify 30px 400 38px
+    @media $LandscapeMin
+      flex-direction column
+    @media $LandscapeMin
+      mb 20px
+  &__imgover
+    db()
+    size 50% 165px
+    pos relative
+    z-index 1
+    overflow hidden
+    @media $LandscapeMax
+      h 176px
+    @media $LandscapeMin
+      w 100%
+      h 150px
+  &__img
+    pos absolute
+    l 0
+    t 0
+    r 0
+    b 0
+    object-fit contain
+    font-family 'object-fit: contain;'
+    min-width 100%
+    transition .7s opacity
+    &:hover
+      opacity .7
+  &__content
+    w calc(55% + 60px)
+    pos relative
+    ml -60px
+    bgc white
+    padding 28px 35px 50px 90px
+    min-height 164px
+    mt 30px
+    @media $desktopMax
+      mt 25px
+      ml -48px
+      w calc(55% + 48px)
+    @media $LandscapeMax
+      min-height 176px
+    @media $LandscapeMin
+      w 100%
+      ml 0
+      mt 0
+      padding 25px 27px
+      min-height inherit
+  &__date
+    font-family $sans
+    fontify 11px 700 11px
+    mb 8px
+    text-transform uppercase
+    letter-spacing .12em
+  &__href
+    c black
+    fontify 20px 400 28px
+    border-bottom 1px solid alpha(black, .25)
+    transition .7s border
+    @media $desktopMax
+      fontify 18px 400 26px
+    &:hover
+      border-color transparent
+    & > span
+      pos relative
+      t 4px
+  &__about
+    font-family $sans
+    fontify 18px 400 26px
+    mt 28px
+    @media $desktopMax
+      fontify 17px 400 25px
+    @media $LandscapeMax
+      dn()

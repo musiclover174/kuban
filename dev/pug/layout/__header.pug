@@ -20,6 +20,15 @@ include ../bemto/bemto.pug
             +e.popup-href(href="#") Вкусы
           +e.popup-item
             +e.popup-href(href="#") Новости
+      +e.popup-col
+        +e('ul').popup-list
+          +e.popup-item
+            +e.popup-href(href="#") Видео
+          +e.popup-item
+            +e.popup-href(href="#") Контакты
+          +e.popup-item
+            +e.popup-href(href="#") Где купить
+      +e.popup-col
         +b('section').socials
           +e('p').title А еще вы можете найти много полезной информации в наших группах в социальных сетях.
           +e('ul').list
@@ -33,11 +42,3 @@ include ../bemto/bemto.pug
               +e.href(href="#", target="_blank", data-type="id")
             +e.item
               +e.href(href="#", target="_blank", data-type="inst")
-      +e.popup-col
-        +e('ul').popup-list
-          +e.popup-item
-            +e.popup-href(href="#") Видео
-          +e.popup-item
-            +e.popup-href(href="#") Контакты
-          +e.popup-item
-            +e.popup-href(href="#") Где купить

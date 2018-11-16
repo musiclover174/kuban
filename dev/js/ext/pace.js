@@ -285,7 +285,9 @@
         return false;
       }
       el = this.getElement();
-			document.querySelector('.js-load-informer').textContent = 'Загрузка ' + Math.ceil(this.progress) + '%'
+      if (document.querySelector('.js-load-informer')) {
+			 document.querySelector('.js-load-informer').textContent = 'Загрузка ' + Math.ceil(this.progress) + '%'
+      }
       transform = "translate3d(" + this.progress + "%, 0, 0)";
       _ref2 = ['webkitTransform', 'msTransform', 'transform'];
       for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {

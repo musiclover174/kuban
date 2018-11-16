@@ -12,40 +12,89 @@
     df(center)
     opacity 0
     transition .7s opacity
+    @media $lDesktopSmall
+      align-items flex-start
     &-inner
       df()
+      flex-wrap wrap
       w 100%
       padding 60px 200px
       max-width 1744px
       margin 0 auto
+      @media $lDesktopSmall
+        padding 180px 40px 180px
+      @media $desktopMin
+        flex-direction column
+      @media $PortraitMedium
+        pt 130px
     &-list
       dfv()
     &-col
       w calc(50% - 30px)
+      @media $desktopMin
+        w 100%
       & + &
         ml 60px
+        @media $desktopMin
+          ml 0
+          mt 40px
+        @media $PortraitMedium
+          mt 20px
+      &:nth-child(2n - 1)
+        ml 0
     &-item
+      @media $desktopMin
+        w 100%
+        text-align center
       & + &
         mt 30px
+        @media $lDesktopSmall
+          mt 20px
+        @media $desktopMin
+          mt 40px
+        @media $PortraitMedium
+          mt 20px
     &-href
       pos relative
       l 0
       color #6c3225
       fontify 96px 700 100px
       transition .7s color, .7s left
+      @media $lDesktopSmall
+        fontify 86px 700 92px
+      @media $desktopMedium
+        fontify 80px 700 84px
+      @media $LandscapeMin
+        fontify 60px 700 64px
+      @media $PortraitMedium
+        fontify 35px 700 40px
       &.active
         color black
       &:hover
         l 20px
         
 .socials
+  @media $desktopMin
+    text-align center
   &__title
     fontify 28px 400 36px
     mt 150px
     max-width 435px
+    @media $lDesktopSmall
+      mt 70px
+    @media $desktopMin
+      margin 70px auto 0
+      fontify 21px 400 29px
+    @media $PortraitMedium
+      mt 40px
   &__list
     mt 45px
     df(center, flex-start)
+    @media $desktopMin
+      justify-content center
+    @media $PortraitMedium
+      transform scale(.5)
+      mt 25px
   &__item
     & + &
       ml 60px
@@ -80,6 +129,9 @@
   cursor pointer
   transition .7s transform
   will-change transform
+  @media $PortraitMedium
+    transform scale(.65)
+    transform-origin top right
   &:before
     content ""
     pos absolute
@@ -100,17 +152,10 @@
     content ""
     pos absolute
     l 54px
-    b 53px
+    b 52px
     size 30px 1px
     bgc black
     transition .5s width, .5s background, .5s transform, .5s bottom 
-  &:not(.open):hover
-    &:before
-      t 47px
-    &:after
-      b 50px
-  &:not(.open):hover &__meat
-    animation burger-hover 1s infinite ease-in-out alternate forwards 200ms
   &.open
     &:before
       animation burger-top 1s ease-in-out forwards
@@ -135,6 +180,15 @@
     h 0
     transition .7s height
       
+html:not(.touchevents) .burger
+  &:not(.open):hover
+    &:before
+      t 47px
+    &:after
+      b 50px
+  &:not(.open):hover &__meat
+    animation burger-hover 1s infinite ease-in-out alternate forwards 200ms
+    
 @keyframes burger-top
   0%
     t 50px
@@ -149,7 +203,7 @@
     
 @keyframes burger-bottom
   0%
-    b 53px
+    b 52px
   40%
     b 64px
   60%
@@ -181,19 +235,29 @@
   60%
     b 64px
   100%
-    b 53px
+    b 52px
       
 .logo
   pos fixed
   z-index 2
   t 53px
   l 44px
+  &__img
+    max-width 100%
+  @media $lDesktopSmall
+    t 33px
+    l 24px
+  @media $PortraitMedium
+    w 80px
+    t 23px
+    l 19px
   
 .index .logo
   filter brightness(0) invert(1)
   transition .7s filter
   
 body.burgeropen
+  overflow hidden
   .logo
     filter none
   .burger__shadow
@@ -202,6 +266,11 @@ body.burgeropen
     l 0
     opacity 1
     transition-delay .7s
+  .burger
+    bgc transparent
+  .logo
+    pos fixed
+    bgc white
     
 html.touchevents
   .burger

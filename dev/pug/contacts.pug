@@ -1,0 +1,43 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+  
+    +b('main').content
+      .container
+        h1 Контакты
+        +b('section').breadcrumbs
+          +e.href(href="#") Главная
+          +e('span').delim / 
+      
+        +b('section').contacts
+          +e('section').info
+            +e.col
+              +e.addresses
+                +e('p').title Почтовый адрес
+                +e('p').text 350020, РФ, Краснодарский край, г.&nbsp;Краснодар, ул. Рашпилевская, 179/1, оф.&nbsp;810
+              +e.addresses
+                +e('p').title Юридический адрес
+                +e('p').text 352630, РФ, Краснодарский край, г.&nbsp;Белореченск, ул. Победы, 132
+            +e.col
+              +e.communication
+                +e('p').title Телефоны
+                +e.text
+                  +e.tel(href="tel:+78612785008") +7 (861) 278-50-08
+                  br
+                  +e.tel(href="tel:+78615534444") +7 (86155) 3-44-44
+              +e.communication
+                +e('p').title Электронная почта
+                +e.text
+                  +e.mail(href="mailto:sales@yugsok.com") sales@yugsok.com
+          +e('section').mapover
+            script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+            +e.map#contacts-map.js-contacts-map(data-coords="45.045794, 38.975141")
+      
+    include layout/__footer
+    
+    include layout/__scripts
