@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function(){
   const burger = new Burger()
   
   if (document.body.classList.contains('index')) {
-    const index = new Index(300)
+    const index = new Index(30)
     index.preload()
   }
   
