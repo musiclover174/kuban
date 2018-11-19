@@ -3,6 +3,7 @@ import Index from './modules/index'
 import Burger from './modules/burger'
 import Contacts from './modules/contacts'
 import Sticky from './modules/sticky'
+import Share from './modules/share'
 
 document.addEventListener('DOMContentLoaded', function(){
   
@@ -24,6 +25,15 @@ document.addEventListener('DOMContentLoaded', function(){
   
   for (let sh of document.querySelectorAll('.js-shave')) {
     shave(sh, sh.getAttribute('data-height'))
+  }
+  
+  if (document.querySelectorAll('.js-share')) {
+    for (let shBtn of document.querySelectorAll('.js-share')) {
+      shBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+      })
+    }
+    window.share = new Share()
   }
   
   new resizeWatcher()

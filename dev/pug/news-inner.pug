@@ -7,7 +7,8 @@ html
   body
     include layout/__header
   
-    +b('main').content.content_text
+    +b('main').content._text._news
+      a(href="#").news__back Вернуться к списку новостей
       .container
         +b('section').text
           h1 Заслуженная награда «Сделано на Кубани»
@@ -23,8 +24,15 @@ html
             p Они впитывают в себя всё лето. Все восходы и закаты, все светлые дни и теплые ночи, всё плодородие и щедрость кубанской земли. Именно кубанские фрукты и ягоды мы берем для создания соков и нектаров «Дары Кубани».
           .news__bottom
             span.news__bottom-date 01 сентября
-            .news__bottom-socials
-            
+            .news__bottom-socials Поделиться
+              +b.socials
+                +e('ul').list._small
+                  +e.item
+                    +e.href.js-share(href="#", data-type="fb", onclick="window.share.facebook(location.href, 'Заголовок', 'урл до картинки', 'текст шэринга')")
+                  +e.item
+                    +e.href.js-share(href="#", data-type="vk", onclick="window.share.vkontakte(location.href, 'Заголовок', 'урл до картинки', 'текст шэринга')")
+                  +e.item
+                    +e.href.js-share(href="#", data-type="id", onclick="window.share.odnoklassniki(location.href, 'Заголовок')")
             
        
     include layout/__footer

@@ -28,16 +28,11 @@
       w 100%
       text-align center
   .socials
-    ml -11px
-    transform scale(.5)
+    ml 83px
+    @media $desktopTablet
+      ml 43px
     @media $LandscapeMin
-      ml -91px
-    @media $PortraitMedium
-      margin 0 auto
-    &__list
-      mt 0
-      @media $PortraitMedium
-        transform scale(1)
+      ml 0
   &__dextra
     pos relative
     color silver

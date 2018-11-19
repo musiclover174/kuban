@@ -182,3 +182,53 @@
       fontify 17px 400 25px
     @media $LandscapeMax
       dn()
+  &__bottom
+    mt 60px
+    df(center, space-between)
+    @media $PortraitMin
+      flex-direction column
+      align-items flex-start
+      justify-content flex-start
+    &-date
+      color black
+      font-family $sans
+      fontify 11px 700 11px
+      text-transform uppercase
+      letter-spacing .12em
+    &-socials
+      df(center, flex-start)
+      color black
+      font-family $sans
+      fontify 11px 700 11px
+      text-transform uppercase
+      letter-spacing .12em
+      @media $PortraitMin
+        mt 40px
+      .socials
+        ml 36px
+  &__back
+    pos absolute
+    z-index 1
+    l 0
+    b 0
+    size 130px
+    color black
+    bgc white
+    font-family $sans
+    fontify 11px 700 17px
+    text-transform uppercase
+    letter-spacing .12em
+    padding 27px 30px
+    transition .7s opacity, .7s visibility
+    &:after
+      content ""
+      pos absolute
+      size 33px 17px
+      l 31px
+      b 28px
+      background-image url('../i/arr_sprite.png')
+      background-repeat no-repeat
+      background-position 0 0
+      transform scaleX(-1)
+    &:hover:after
+      animation arrAnimation 2s infinite steps(30)

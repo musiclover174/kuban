@@ -276,6 +276,9 @@ body:not(.index) .logo {
     padding-top: 140px;
   }
 }
+.content_text {
+  position: relative;
+}
 .content_text .container {
   min-height: 100%;
   margin-top: -132px;
@@ -291,6 +294,11 @@ body:not(.index) .logo {
     padding-top: 0;
     padding-bottom: 0;
     background-color: transparent;
+  }
+}
+@media (max-width: 1050px) {
+  .content_news {
+    padding-bottom: 190px;
   }
 }
 .content h1:not([class]) {
@@ -2433,7 +2441,6 @@ body.compensate-for-scrollbar {
   }
 }
 .socials__list {
-  margin-top: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2444,15 +2451,61 @@ body.compensate-for-scrollbar {
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
+.socials__list:not(.socials__list_small) {
+  margin-top: 45px;
+}
+.socials__list_small .socials__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.socials__list_small .socials__item + .socials__item {
+  margin-left: 30px;
+}
+.socials__list_small .socials__href[data-type="yt"] {
+  width: 15px;
+  height: 11px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAALCAMAAACXmSduAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAYFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD////68c6fAAAAHnRSTlMAFKja4e74m9jZ6fSS+fAkpv78AYo4x/XvoNfg9qegEGzLAAAAAWJLR0QfBQ0QvQAAAAlwSFlzAAALEgAACxIB0t1+/AAAAFlJREFUCNdlTtcSgDAIg06r1r2r/P9nei165+AlCSEAoJBKGyIyWkmBYOlZFrKXdpBHKErPugLPUDdtJB1cbeiHxG5/nIj9lJ95mmj57f/ex3ULek//BXfgCfAMDvRQloToAAAAAElFTkSuQmCC") no-repeat center;
+}
+.socials__list_small .socials__href[data-type="fb"] {
+  width: 13px;
+  height: 13px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAUVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///9cFzNQAAAAGXRSTlMAR+bi58QwBx/+HRUv6An34Q87ARE/LVHj17ENeAAAAAFiS0dEGnVn5DIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAABNSURBVAjXdc5JEoAgDETRDuA8IM59/4tqKUQX+ld5Vb0IxDBlBJZPDvHI8qIko6oaTavq0HuqBgSqxoBpXpJWnG3fyx/Zl3bcf15ycgCwVA0TMg2qRwAAAABJRU5ErkJggg==") no-repeat center;
+}
+.socials__list_small .socials__href[data-type="vk"] {
+  width: 17px;
+  height: 10px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAKCAMAAABlokWQAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8kZSTAAAAAOXRSTlMAiplAG9b2uQSMgrvcc/BRy0JZTgH8OcbiDVTtY4n+p436VfLJBqVKFujF+b696/0KO/Sc3bg+z7/tsF4mAAAAAWJLR0Q6TgnE+gAAAAlwSFlzAAALEgAACxIB0t1+/AAAAIBJREFUCNdFi0cWglAQBNuPATGBAcUcMGfFUPe/mB9cMIuemepXKhjjqFiiXJHcqjGealB31YCm1AJ8BTbb6qSk60MvlPowiIYw0tiWE0nhFGZzWCxXEK8t0YZ8tinQbp+TQ5Sh4Jh9J2txzjQ5F3tfb/eHXU/9RS9OXtL7kyTfH9h+FbmDaKT3AAAAAElFTkSuQmCC") no-repeat center;
+}
+.socials__list_small .socials__href[data-type="id"] {
+  width: 9px;
+  height: 14px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAOCAMAAADKSsaaAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAkFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD////Dn64xAAAALnRSTlMAVOfuZV55qxOUDiklDBDG0+PO3gNZOhVVD7pnjco5SFxx5fIECyz0G0kUAvxp5FmZgQAAAAFiS0dELyPUIBEAAAAJcEhZcwAACxIAAAsSAdLdfvwAAABmSURBVAjXJYvXEoIAEAOjWAAL9q4gdtT9/88zN+Yhm5ubldRqk3TkdIn0vKCfZiDlUT4HUUONYCwVMIFpKDMLc3OxVL5aa7PVDrL9AY468U/pf2WeQ1DtdblKN/P+gKde0Oj94fsDEX8NG7G1b0AAAAAASUVORK5CYII=") no-repeat center;
+}
+.socials__list_small .socials__href[data-type="inst"] {
+  width: 13px;
+  height: 13px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAS1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD////m3hxmAAAAF3RSTlMAYN1hXeaz/txMtKkrBqTnq6qoKQVf23MFWT8AAAABYktHRBibaYUeAAAACXBIWXMAAAsSAAALEgHS3X78AAAAV0lEQVQI123NSRKAIAxE0Q5OIOAASu5/UwnG0oW9+q+yCECG75kO6LV5GCeCfeQwW0j4EINf3MqiDTJfSxSagio2xd/b3pRUnPKRBfz+q7M4PyKAinYhXIAJCmfR+poRAAAAAElFTkSuQmCC");
+}
 @media (max-width: 1170px) {
-  .socials__list {
+  .socials__list:not(.socials__list_small) {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
   }
 }
 @media (max-width: 500px) {
-  .socials__list {
+  .socials__list:not(.socials__list_small) {
     -webkit-transform: scale(0.5);
     transform: scale(0.5);
     margin-top: 25px;
@@ -2893,27 +2946,16 @@ html.touchevents .burger:not(.open):hover .burger__meat {
   }
 }
 .footer .socials {
-  margin-left: -11px;
-  -webkit-transform: scale(0.5);
-  transform: scale(0.5);
+  margin-left: 83px;
+}
+@media (max-width: 1050px) {
+  .footer .socials {
+    margin-left: 43px;
+  }
 }
 @media (max-width: 767px) {
   .footer .socials {
-    margin-left: -91px;
-  }
-}
-@media (max-width: 500px) {
-  .footer .socials {
-    margin: 0 auto;
-  }
-}
-.footer .socials__list {
-  margin-top: 0;
-}
-@media (max-width: 500px) {
-  .footer .socials__list {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    margin-left: 0;
   }
 }
 .footer__dextra {
@@ -4106,6 +4148,103 @@ body.scrollEnd .icat {
   .news__about {
     display: none;
   }
+}
+.news__bottom {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+@media (max-width: 390px) {
+  .news__bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+.news__bottom-date {
+  color: #000;
+  font-family: "PT Sans";
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.news__bottom-socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  color: #000;
+  font-family: "PT Sans";
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+@media (max-width: 390px) {
+  .news__bottom-socials {
+    margin-top: 40px;
+  }
+}
+.news__bottom-socials .socials {
+  margin-left: 36px;
+}
+.news__back {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 130px;
+  height: 130px;
+  color: #000;
+  background-color: #fff;
+  font-family: "PT Sans";
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 17px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 27px 30px;
+  -webkit-transition: 0.7s opacity, 0.7s visibility;
+  transition: 0.7s opacity, 0.7s visibility;
+}
+.news__back:after {
+  content: "";
+  position: absolute;
+  width: 33px;
+  height: 17px;
+  left: 31px;
+  bottom: 28px;
+  background-image: url("../i/arr_sprite.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.news__back:hover:after {
+  -webkit-animation: arrAnimation 2s infinite steps(30);
+  animation: arrAnimation 2s infinite steps(30);
 }
 .pagination {
   display: -webkit-box;
