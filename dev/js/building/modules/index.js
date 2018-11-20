@@ -79,7 +79,7 @@ export default class Index {
     document.querySelector('.handler__texts').classList.add('show')
    
     window.addEventListener('scroll', () => {
-      console.log(document.documentElement.scrollTop / parseInt(document.querySelector('.js-img-handler').style.height))
+      //console.log(document.documentElement.scrollTop / parseInt(document.querySelector('.js-img-handler').style.height))
     })
     
     var controller = new ScrollMagic.Controller()
@@ -158,7 +158,8 @@ export default class Index {
       scrollTop = document.documentElement.scrollTop || document.body.scrollTop
       ceil = Math.ceil(scrollTop / scrollToPicture)
       
-      if (ceil <= imgQuantity && ceil !== curActive && ceil >= 0) {
+      if (ceil <= imgQuantity && ceil >= 0) {
+      //if (ceil <= imgQuantity && ceil !== curActive && ceil >= 0) {
         if (ceil !== 0) {
           curActive = Math.ceil(scrollTop / scrollToPicture)
           if (curActive < 36 || curActive > 61) {
@@ -174,11 +175,11 @@ export default class Index {
         let percWidth = Math.ceil(ceil * 100 / imgQuantity),
             percScroll = Math.ceil((scrollTop + window.innerHeight) * 100 / document.body.scrollHeight)
         
-        bgLeft.style.width = (percWidth > 100 ? 100 : percWidth) + '%'
+        bgLeft.style.width = (percWidth >= 100 ? 100 : percWidth) + '%'
         bgRight.style.width = 100 - (percWidth > 100 ? 100 : percWidth) + '%'
         progressEl.style.height = percScroll + '%'
         
-        if (percScroll === 100) {
+        if (percScroll === 100 || percWidth >= 100) {
           document.body.classList.add('scrollEnd')
         } else {
           document.body.classList.remove('scrollEnd')

@@ -2,7 +2,11 @@
   dfv(center, center)
   pos fixed
   z-index 5
-  full()
+  w 100vw
+  h 100vh
+  t 0
+  l 0
+  bgc white
   &__imgover
     pos relative
     &:before
@@ -38,6 +42,9 @@
   transform-origin left bottom
   overflow hidden
   transition .7s visibility, .7s color, .7s opacity
+  @media $PortraitMax
+    r -134px
+    b 21px
   &_middle
     dn()
   &:before
@@ -70,6 +77,15 @@
     mt -720px
     ml -1280px
     dn()
+    @media $desktopMax
+      h 1000px
+      mt -500px
+      ml -889px
+    @media $PortraitMax
+      h 100vh
+      ml 0
+      mt 0
+      transform translate(-50%, -50%)
     &:first-child
       db()
 
@@ -95,6 +111,10 @@
     dfv(center, flex-end)
     .handler__img
       l calc((100vw - 2217px) / 2)
+      @media $desktopMax
+        l calc((100vw - 1543px) / 2)
+      @media $PortraitMax
+        l calc((100vw - 785px) / 2)
   &__right
     &:not(&_f)
       dn()
@@ -103,6 +123,10 @@
     r 0
     .handler__img
       r calc((100vw - 2217px) / 2)
+      @media $desktopMax
+        r calc((100vw - 1543px) / 2)
+      @media $PortraitMax
+        r calc((100vw - 785px) / 2)
     &_f
       w 100%
       flex-grow 1
@@ -112,7 +136,25 @@
     background-position center bottom
     background-attachment fixed
     background-repeat no-repeat
-  
+    @media $PortraitMax
+      size 100vw 35px
+
+html.touchevents .bg
+  &__left
+    .handler__img
+      l calc((100vw - 2200px) / 2)
+      @media $desktopMax
+        l calc((100vw - 1526px) / 2)
+      @media $PortraitMax
+        l calc((100vw - 785px) / 2)
+  &__right
+    .handler__img
+      r calc((100vw - 2200px) / 2)
+      @media $desktopMax
+        r calc((100vw - 1526px) / 2)
+      @media $PortraitMax
+        r calc((100vw - 785px) / 2)
+          
 body.iload
   .informer
     db()
@@ -144,9 +186,12 @@ body.scroll
   &__img
     pos absolute
     b 0
-    //transform translateX(-50%)
-    &.hide
-      dn()
+    @media $desktopMax
+      h 680px
+      b 21px
+    @media $PortraitMax
+      h 350px
+      b 11px
   &__texts
     &.text1
       & ^[0]__text_text1
@@ -228,38 +273,126 @@ body.scroll
       t 50%
       l 50%
       transform translate(-50%, -50%)
+      @media $lDesktopSmall
+        max-width 908px
+      @media $desktopMedium
+        max-width 788px
+      @media $LandscapeMedium
+        padding 0 40px
+        max-width 868px
       .handler__text-title
         fontify 160px 400 179px
-        mb 0
+        mb 20px
+        @media $lDesktopSmall
+          fontify 120px 400 139px
+        @media $desktopMedium
+          fontify 100px 400 129px
+        @media $desktopMin
+          fontify 90px 400 119px
+          mb 10px
+        @media $LandscapeMedium
+          fontify 70px 400 99px
+        @media $PortraitMax
+          fontify 50px 400 79px
         span + span
-          t -30px
+          mt -30px
+          @media $desktopMedium
+            mt -30px
       .handler__text-dsc
         max-width 993px
         margin 0 auto
+        @media $desktopMin
+          db()
+        @media $PortraitMax
+          fontify 18px 400 26px
     &_text2
       max-width 642px
       l 27%
       b 18%
+      @media $lDesktopSmall
+        max-width 572px
+      @media $desktopMin
+        max-width 412px
+        bottom auto
+        t calc(10% + 60px)
+        right auto
+        l 50%
+        transform translateX(-50%)
     &_text3
       max-width 762px
       r 12%
       t 12%
+      @media $lDesktopSmall
+        max-width 612px
+        r 5%
+      @media $desktopMin
+        max-width 500px
+        t calc(10% + 90px)
+      @media $LandscapeMedium
+        max-width 360px
+        bottom auto
+        t calc(10% + 60px)
+        right auto
+        l 50%
+        transform translateX(-50%)
     &_text4
       max-width 762px
       r 12%
       t 12%
+      @media $lDesktopSmall
+        max-width 612px
+        r 5%
+      @media $desktopMin
+        max-width 500px
+        t calc(10% + 90px)
+      @media $LandscapeMedium
+        max-width 360px
+        bottom auto
+        t calc(10% + 60px)
+        right auto
+        l 50%
+        transform translateX(-50%)
     &_text5
       max-width 425px
       l 15%
       b 18%
+      @media $lDesktopSmall
+        max-width 365px
+        l 10%
+      @media $desktopMin
+        max-width 295px
+      @media $LandscapeMedium
+        max-width 360px
+        bottom auto
+        t calc(10% + 60px)
+        right auto
+        l 50%
+        transform translateX(-50%)
     &_text6
       max-width 530px
       r 24%
       t 19%
+      @media $lDesktopSmall
+        max-width 438px
+      @media $LandscapeMedium
+        max-width 360px
+        bottom auto
+        t calc(10% + 60px)
+        right auto
+        l 50%
+        transform translateX(-50%)
     &-title
       font-family $lf
       fontify 100px 400 112px
       mb 30px
+      @media $lDesktopSmall
+        fontify 80px 400 84px
+      @media $desktopMedium
+        fontify 60px 400 64px
+      @media $desktopMin
+        mb 0
+      @media $LandscapeMedium
+        fontify 40px 400 54px
       span
         pos relative
         white-space nowrap
@@ -276,6 +409,10 @@ body.scroll
       fontify 28px 400 36px
       opacity 0
       transition .75s opacity, .75s bottom
+      @media $lDesktopSmall
+        fontify 21px 400 29px
+      @media $desktopMin
+        dn()
     
 .progress
   pos fixed
@@ -285,18 +422,29 @@ body.scroll
   w 0
   h 0
   bgc #2b7308
-    
+  
+html.touchevents .progress
+  w 3px
+  
 .products
   pos fixed
   dfv(center, flex-end)
   full()
   z-index -1
-  pb 59px
+  pb 58px
   opacity 0
   transition .7s opacity
+  @media $desktopMax
+    pb 61px
+  @media $PortraitMax
+    pb 30px
   &__car
-    max-width 1032px
+    max-width 1035px
     margin 0 auto
+    @media $lDesktopSmall
+      max-width 694px
+    @media $PortraitMax
+      max-width 330px
     &.swiper-container
       overflow visible
     .swiper-slide
@@ -311,9 +459,17 @@ body.scroll
     transform scale(1)
     will-change transform
     transition .7s transform, .7s top
+    @media $desktopMax
+      h 474px
+    @media $PortraitMax
+      h 244px
     &:hover
       transform scale(1.05)
       t -20px
+      @media $desktopMax
+        t -11px
+      @media $PortraitMax
+        t -5px
     
 .icat
   opacity 0
