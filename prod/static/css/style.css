@@ -221,6 +221,12 @@ button {
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: 'LifehackBasic';
+  src: local('Lifehack Basic Regular'), local('LifehackBasic-Regular'), url("fonts/subset-LifehackBasic-Regular.woff2") format('woff2'), url("fonts/subset-LifehackBasic-Regular.woff") format('woff'), url("fonts/subset-LifehackBasic-Regular.svg#LifehackBasic-Regular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 html,
 body {
   font-family: "Lora";
@@ -3014,6 +3020,29 @@ html.touchevents .burger:not(.open):hover .burger__meat {
   bottom: 0;
   left: 0;
 }
+.preloader__imgover {
+  position: relative;
+}
+.preloader__imgover:before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  width: 97px;
+  height: 19px;
+  margin-left: -49px;
+  background: url("../i/preload_top.jpg") no-repeat center;
+}
+.preloader__imgover:after {
+  content: "";
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  width: 195px;
+  height: 44px;
+  margin-left: -98px;
+  background: url("../i/preload_bottom.jpg") no-repeat center;
+}
 .informer {
   position: fixed;
   z-index: 6;
@@ -3191,12 +3220,13 @@ body.scroll .bg__right_f {
   opacity: 1;
 }
 .handler__texts.text1 .handler__text_text1 span {
-  -webkit-animation-name: titleAnimation;
-  animation-name: titleAnimation;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-duration: 2.7s;
-  animation-duration: 2.7s;
+  opacity: 1;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  -webkit-transition: 0.75s opacity, 2.7s -webkit-clip-path;
+  transition: 0.75s opacity, 2.7s -webkit-clip-path;
+  transition: 2.7s clip-path, 0.75s opacity;
+  transition: 2.7s clip-path, 0.75s opacity, 2.7s -webkit-clip-path;
 }
 .handler__texts.text1 .handler__text_text1 .handler__text-dsc {
   opacity: 1;
@@ -3209,126 +3239,153 @@ body.scroll .bg__right_f {
   opacity: 1;
 }
 .handler__texts.text2 .handler__text_text2 span {
-  -webkit-animation-name: titleAnimation;
-  animation-name: titleAnimation;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
+  opacity: 1;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
 }
 .handler__texts.text2 .handler__text_text2 .handler__text-dsc {
   opacity: 1;
   bottom: 0;
-  -webkit-transition-delay: 0.7s;
-  transition-delay: 0.7s;
+  -webkit-transition-delay: 0.75s;
+  transition-delay: 0.75s;
 }
 .handler__texts.text3 .handler__text_text3 {
   visibility: visible;
   opacity: 1;
 }
 .handler__texts.text3 .handler__text_text3 span {
-  -webkit-animation-name: titleAnimation;
-  animation-name: titleAnimation;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
+  opacity: 1;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
 }
 .handler__texts.text3 .handler__text_text3 .handler__text-dsc {
   opacity: 1;
   bottom: 0;
-  -webkit-transition-delay: 0.7s;
-  transition-delay: 0.7s;
+  -webkit-transition-delay: 0.75s;
+  transition-delay: 0.75s;
 }
 .handler__texts.text4 .handler__text_text4 {
   visibility: visible;
   opacity: 1;
 }
 .handler__texts.text4 .handler__text_text4 span {
-  -webkit-animation-name: titleAnimation;
-  animation-name: titleAnimation;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
+  opacity: 1;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
 }
 .handler__texts.text4 .handler__text_text4 .handler__text-dsc {
   opacity: 1;
   bottom: 0;
-  -webkit-transition-delay: 0.7s;
-  transition-delay: 0.7s;
+  -webkit-transition-delay: 0.75s;
+  transition-delay: 0.75s;
 }
 .handler__texts.text5 .handler__text_text5 {
   visibility: visible;
   opacity: 1;
 }
 .handler__texts.text5 .handler__text_text5 span {
-  -webkit-animation-name: titleAnimation;
-  animation-name: titleAnimation;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
+  opacity: 1;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
 }
 .handler__texts.text5 .handler__text_text5 .handler__text-dsc {
   opacity: 1;
   bottom: 0;
-  -webkit-transition-delay: 0.7s;
-  transition-delay: 0.7s;
+  -webkit-transition-delay: 0.75s;
+  transition-delay: 0.75s;
+}
+.handler__texts.text6 .handler__text_text6 {
+  visibility: visible;
+  opacity: 1;
+}
+.handler__texts.text6 .handler__text_text6 span {
+  opacity: 1;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+}
+.handler__texts.text6 .handler__text_text6 .handler__text-dsc {
+  opacity: 1;
+  bottom: 0;
+  -webkit-transition-delay: 0.75s;
+  transition-delay: 0.75s;
 }
 .handler__text {
   position: fixed;
   width: 100%;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
   visibility: hidden;
   opacity: 0;
   color: #fff;
-  -webkit-transition: 0.35s opacity, 0.35s visibility;
-  transition: 0.35s opacity, 0.35s visibility;
+  text-align: center;
+  -webkit-transition: 0.75s opacity, 0.75s visibility;
+  transition: 0.75s opacity, 0.75s visibility;
 }
 .handler__text_text1 {
-  max-width: 944px;
-  left: 16%;
+  max-width: 1158px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.handler__text_text1 .handler__text-title {
+  font-size: 160px;
+  font-weight: 400;
+  line-height: 179px;
+  margin-bottom: 0;
+}
+.handler__text_text1 .handler__text-title span + span {
+  top: -30px;
+}
+.handler__text_text1 .handler__text-dsc {
+  max-width: 993px;
+  margin: 0 auto;
 }
 .handler__text_text2 {
-  max-width: 876px;
-  left: 22%;
+  max-width: 642px;
+  left: 27%;
+  bottom: 18%;
 }
 .handler__text_text3 {
-  max-width: 895px;
-  left: 27%;
+  max-width: 762px;
+  right: 12%;
+  top: 12%;
 }
 .handler__text_text4 {
-  max-width: 730px;
-  left: 45%;
+  max-width: 762px;
+  right: 12%;
+  top: 12%;
 }
 .handler__text_text5 {
-  max-width: 860px;
-  left: 45%;
+  max-width: 425px;
+  left: 15%;
+  bottom: 18%;
+}
+.handler__text_text6 {
+  max-width: 530px;
+  right: 24%;
+  top: 19%;
 }
 .handler__text-title {
-  font-size: 96px;
-  font-weight: 700;
-  line-height: 123px;
+  font-family: "LifehackBasic";
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 112px;
   margin-bottom: 30px;
 }
 .handler__text-title span {
   position: relative;
+  white-space: nowrap;
   display: block;
   width: 100%;
   -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 100%);
   clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 100%);
-  -webkit-animation-fill-mode: forwards;
   opacity: 0;
-/*&:first-child
-          animation-delay 0.35s
-        &:last-child
-          animation-delay 0.5s*/
+  -webkit-transition: 0.75s opacity, 0.75s -webkit-clip-path;
+  transition: 0.75s opacity, 0.75s -webkit-clip-path;
+  transition: 0.75s clip-path, 0.75s opacity;
+  transition: 0.75s clip-path, 0.75s opacity, 0.75s -webkit-clip-path;
 }
 .handler__text-title span + span {
-  top: -10px;
+  margin-top: -10px;
 }
 .handler__text-dsc {
   position: relative;
@@ -3337,15 +3394,15 @@ body.scroll .bg__right_f {
   font-weight: 400;
   line-height: 36px;
   opacity: 0;
-  -webkit-transition: 0.4s opacity, 0.4s bottom;
-  transition: 0.4s opacity, 0.4s bottom;
+  -webkit-transition: 0.75s opacity, 0.75s bottom;
+  transition: 0.75s opacity, 0.75s bottom;
 }
 .progress {
   position: fixed;
   z-index: 3;
   left: 0;
   top: 0;
-  width: 7px;
+  width: 0;
   height: 0;
   background-color: #2b7308;
 }
@@ -3369,13 +3426,13 @@ body.scroll .bg__right_f {
   bottom: 0;
   left: 0;
   z-index: -1;
-  padding-bottom: 66px;
+  padding-bottom: 59px;
   opacity: 0;
   -webkit-transition: 0.7s opacity;
   transition: 0.7s opacity;
 }
 .products__car {
-  max-width: 1254px;
+  max-width: 1032px;
   margin: 0 auto;
 }
 .products__car.swiper-container {
@@ -3446,7 +3503,8 @@ body.scrollEnd .products {
   opacity: 1;
   z-index: 2;
 }
-body.scrollEnd .handler {
+body.scrollEnd .handler,
+body.scrollEnd .handler__img {
   opacity: 0;
   -webkit-transition: 0.7s opacity;
   transition: 0.7s opacity;
@@ -3499,8 +3557,8 @@ body.scrollEnd .icat {
   }
   100% {
     opacity: 1;
-    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
   }
 }
 @keyframes titleAnimation {
@@ -3511,8 +3569,8 @@ body.scrollEnd .icat {
   }
   100% {
     opacity: 1;
-    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
   }
 }
 .contacts__info {

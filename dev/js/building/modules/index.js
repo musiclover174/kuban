@@ -78,11 +78,15 @@ export default class Index {
     
     document.querySelector('.handler__texts').classList.add('show')
    
+    window.addEventListener('scroll', () => {
+      console.log(document.documentElement.scrollTop / parseInt(document.querySelector('.js-img-handler').style.height))
+    })
+    
     var controller = new ScrollMagic.Controller()
     
     new ScrollMagic.Scene({
       triggerElement: '.handler__texts',
-      duration: h * .04,
+      duration: h * .1,
       triggerHook: 'onLeave'
     })
       .setClassToggle('.handler__texts', 'text1')
@@ -90,8 +94,8 @@ export default class Index {
     
     new ScrollMagic.Scene({
       triggerElement: '.handler__texts',
-      offset: h * .071,
-      duration: h * .07,
+      offset: h * .13,
+      duration: h * .08,
       triggerHook: 'onLeave'
     })
       .setClassToggle('.handler__texts', 'text2')
@@ -99,8 +103,8 @@ export default class Index {
     
     new ScrollMagic.Scene({
       triggerElement: '.handler__texts',
-      offset: h * .171,
-      duration: h * .05,
+      offset: h * .27,
+      duration: h * .1,
       triggerHook: 'onLeave'
     })
       .setClassToggle('.handler__texts', 'text3')
@@ -108,8 +112,8 @@ export default class Index {
     
     new ScrollMagic.Scene({
       triggerElement: '.handler__texts',
-      offset: h * .77,
-      duration: h * .07,
+      offset: h * .4,
+      duration: h * .1,
       triggerHook: 'onLeave'
     })
       .setClassToggle('.handler__texts', 'text4')
@@ -117,11 +121,20 @@ export default class Index {
     
     new ScrollMagic.Scene({
       triggerElement: '.handler__texts',
-      offset: h * .85,
-      duration: h * .07,
+      offset: h * .6,
+      duration: h * .05,
       triggerHook: 'onLeave'
     })
       .setClassToggle('.handler__texts', 'text5')
+      .addTo(controller)
+    
+    new ScrollMagic.Scene({
+      triggerElement: '.handler__texts',
+      offset: h * .76,
+      duration: h * .05,
+      triggerHook: 'onLeave'
+    })
+      .setClassToggle('.handler__texts', 'text6')
       .addTo(controller)
     
   }

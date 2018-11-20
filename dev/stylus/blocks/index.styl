@@ -3,6 +3,24 @@
   pos fixed
   z-index 5
   full()
+  &__imgover
+    pos relative
+    &:before
+      content ""
+      pos absolute
+      t -60px
+      l 50%
+      size 97px 19px
+      ml -49px
+      background url('../i/preload_top.jpg') no-repeat center
+    &:after
+      content ""
+      pos absolute
+      b -70px
+      l 50%
+      size 195px 44px
+      ml -98px
+      background url('../i/preload_bottom.jpg') no-repeat center
   
 .informer
   pos fixed
@@ -135,9 +153,9 @@ body.scroll
         visibility visible
         opacity 1
         span
-          animation-name titleAnimation
-          animation-timing-function ease
-          animation-duration 2.7s
+          opacity 1
+          clip-path polygon(100% 0, 100% 100%, 0 100%, 0 0)
+          transition 2.7s clip-path, .75s opacity
         .handler__text-dsc
           opacity 1
           b 0
@@ -147,102 +165,124 @@ body.scroll
         visibility visible
         opacity 1
         span
-          animation-name titleAnimation
-          animation-timing-function ease
-          animation-duration .7s
+          opacity 1
+          clip-path polygon(100% 0, 100% 100%, 0 100%, 0 0)
         .handler__text-dsc
           opacity 1
           b 0
-          transition-delay .7s
+          transition-delay .75s
     &.text3
       & ^[0]__text_text3
         visibility visible
         opacity 1
         span
-          animation-name titleAnimation
-          animation-timing-function ease
-          animation-duration .7s
+          opacity 1
+          clip-path polygon(100% 0, 100% 100%, 0 100%, 0 0)
         .handler__text-dsc
           opacity 1
           b 0
-          transition-delay .7s
+          transition-delay .75s
     &.text4
       & ^[0]__text_text4
         visibility visible
         opacity 1
         span
-          animation-name titleAnimation
-          animation-timing-function ease
-          animation-duration .7s
+          opacity 1
+          clip-path polygon(100% 0, 100% 100%, 0 100%, 0 0)
         .handler__text-dsc
           opacity 1
           b 0
-          transition-delay .7s
+          transition-delay .75s
     &.text5
       & ^[0]__text_text5
         visibility visible
         opacity 1
         span
-          animation-name titleAnimation
-          animation-timing-function ease
-          animation-duration .7s
+          opacity 1
+          clip-path polygon(100% 0, 100% 100%, 0 100%, 0 0)
         .handler__text-dsc
           opacity 1
           b 0
-          transition-delay .7s
+          transition-delay .75s
+    &.text6
+      & ^[0]__text_text6
+        visibility visible
+        opacity 1
+        span
+          opacity 1
+          clip-path polygon(100% 0, 100% 100%, 0 100%, 0 0)
+        .handler__text-dsc
+          opacity 1
+          b 0
+          transition-delay .75s
   &__text
     pos fixed
     w 100%
-    t 50%
-    transform translateY(-50%)
     visibility hidden
     opacity 0
     color white
-    transition .35s opacity, .35s visibility
+    text-align center
+    transition .75s opacity, .75s visibility
     &_text1
-      max-width 944px
-      l 16%
+      max-width 1158px
+      t 50%
+      l 50%
+      transform translate(-50%, -50%)
+      .handler__text-title
+        fontify 160px 400 179px
+        mb 0
+        span + span
+          t -30px
+      .handler__text-dsc
+        max-width 993px
+        margin 0 auto
     &_text2
-      max-width 876px
-      l 22%
-    &_text3
-      max-width 895px
+      max-width 642px
       l 27%
+      b 18%
+    &_text3
+      max-width 762px
+      r 12%
+      t 12%
     &_text4
-      max-width 730px
-      l 45%
+      max-width 762px
+      r 12%
+      t 12%
     &_text5
-      max-width 860px
-      l 45%
+      max-width 425px
+      l 15%
+      b 18%
+    &_text6
+      max-width 530px
+      r 24%
+      t 19%
     &-title
-      fontify 96px 700 123px
+      font-family $lf
+      fontify 100px 400 112px
       mb 30px
       span
         pos relative
+        white-space nowrap
         db()
         w 100%
         clip-path polygon(100% 0, 100% 100%, 0 100%, 0 100%)
-        -webkit-animation-fill-mode forwards
         opacity 0
+        transition .75s clip-path, .75s opacity
         & + span
-          t -10px
-        /*&:first-child
-          animation-delay 0.35s
-        &:last-child
-          animation-delay 0.5s*/
+          mt -10px
     &-dsc
       pos relative
       b -20px
       fontify 28px 400 36px
       opacity 0
-      transition .4s opacity, .4s bottom
+      transition .75s opacity, .75s bottom
     
 .progress
   pos fixed
   z-index 3
   l 0
   t 0
-  w 7px
+  w 0
   h 0
   bgc #2b7308
     
@@ -251,11 +291,11 @@ body.scroll
   dfv(center, flex-end)
   full()
   z-index -1
-  pb 66px
+  pb 59px
   opacity 0
   transition .7s opacity
   &__car
-    max-width 1254px
+    max-width 1032px
     margin 0 auto
     &.swiper-container
       overflow visible
@@ -317,7 +357,8 @@ body.scrollEnd
   .products
     opacity 1
     z-index 2
-  .handler
+  .handler,
+  .handler__img
     opacity 0
     transition .7s opacity
   .informer
@@ -327,6 +368,7 @@ body.scrollEnd
   .icat
     opacity 1
     visibility visible
+  
     
 @keyframes titleAnimation {
   0% {
@@ -335,6 +377,6 @@ body.scrollEnd
   }
   100% {
     opacity 1
-    clip-path polygon(100% 0, 100% 100%, 0 100%, 0 15%)
+    clip-path polygon(100% 0, 100% 100%, 0 100%, 0 0)
   }
 }
