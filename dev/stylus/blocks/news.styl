@@ -220,6 +220,8 @@
     letter-spacing .12em
     padding 27px 30px
     transition .7s opacity, .7s visibility
+    @media $PortraitMax
+      dn()
     &:after
       content ""
       pos absolute

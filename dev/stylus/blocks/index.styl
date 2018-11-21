@@ -9,7 +9,7 @@
   bgc white
   &__imgover
     pos relative
-    &:before
+    /*&:before
       content ""
       pos absolute
       t -60px
@@ -24,7 +24,7 @@
       l 50%
       size 195px 44px
       ml -98px
-      background url('../i/preload_bottom.jpg') no-repeat center
+      background url('../i/preload_bottom.jpg') no-repeat center*/
   
 .informer
   pos fixed
@@ -69,26 +69,26 @@
 .opening
   pos fixed
   z-index 4
-  full()
+  w 100vw
+  h 100vh
+  t 0
+  l 0
   &__img
-    pos fixed
+    pos absolute
     t 50%
     l 50%
-    mt -720px
-    ml -1280px
+    transform translate(-50%, -50%)
     dn()
     @media $desktopMax
       h 1000px
-      mt -500px
-      ml -889px
     @media $PortraitMax
       h 100vh
-      ml 0
-      mt 0
-      transform translate(-50%, -50%)
     &:first-child
       db()
 
+.js-imgloader
+  h 0
+        
 .bg
   pos fixed
   z-index 1
@@ -115,6 +115,8 @@
         l calc((100vw - 1543px) / 2)
       @media $PortraitMax
         l calc((100vw - 785px) / 2)
+      @media $Mobile370
+        l calc((100vw - 628px) / 2)
   &__right
     &:not(&_f)
       dn()
@@ -127,6 +129,8 @@
         r calc((100vw - 1543px) / 2)
       @media $PortraitMax
         r calc((100vw - 785px) / 2)
+      @media $Mobile370
+        r calc((100vw - 628px) / 2)
     &_f
       w 100%
       flex-grow 1
@@ -147,6 +151,8 @@ html.touchevents .bg
         l calc((100vw - 1526px) / 2)
       @media $PortraitMax
         l calc((100vw - 785px) / 2)
+      @media $Mobile370
+        l calc((100vw - 628px) / 2)
   &__right
     .handler__img
       r calc((100vw - 2200px) / 2)
@@ -154,6 +160,8 @@ html.touchevents .bg
         r calc((100vw - 1526px) / 2)
       @media $PortraitMax
         r calc((100vw - 785px) / 2)
+      @media $Mobile370
+        r calc((100vw - 628px) / 2)
           
 body.iload
   .informer
@@ -190,8 +198,11 @@ body.scroll
       h 680px
       b 21px
     @media $PortraitMax
-      h 350px
+      h 330px
       b 11px
+    @media $Mobile370
+      h 280px
+      b 15px
   &__texts
     &.text1
       & ^[0]__text_text1
@@ -280,6 +291,9 @@ body.scroll
       @media $LandscapeMedium
         padding 0 40px
         max-width 868px
+      @media $PortraitMin
+        padding 0 20px
+        max-width 100%
       .handler__text-title
         fontify 160px 400 179px
         mb 20px
@@ -294,10 +308,16 @@ body.scroll
           fontify 70px 400 99px
         @media $PortraitMax
           fontify 50px 400 79px
+        @media $PortraitMedium
+          fontify 40px 400 54px
+        @media $PortraitMin
+          fontify 36px 400 50px
         span + span
           mt -30px
           @media $desktopMedium
-            mt -30px
+            mt -20px
+          @media $PortraitMedium
+            mt -10px
       .handler__text-dsc
         max-width 993px
         margin 0 auto
@@ -305,6 +325,8 @@ body.scroll
           db()
         @media $PortraitMax
           fontify 18px 400 26px
+        @media $PortraitMin
+          fontify 17px 400 25px
     &_text2
       max-width 642px
       l 27%
@@ -393,6 +415,8 @@ body.scroll
         mb 0
       @media $LandscapeMedium
         fontify 40px 400 54px
+      @media $PortraitMin
+        fontify 36px 400 50px
       span
         pos relative
         white-space nowrap
@@ -445,14 +469,25 @@ html.touchevents .progress
       max-width 694px
     @media $PortraitMax
       max-width 330px
+    @media $Mobile370
+      max-width 265px
     &.swiper-container
       overflow visible
     .swiper-slide
       text-align center
   .swiper-button-prev
     l 54px
+    @media $PortraitMax
+      l 20px
+      transform scale(.65) rotate(180deg)
+      filter brightness(0) invert(1)
   .swiper-button-next
     r 54px
+    @media $PortraitMax
+      r 20px
+      transform scale(.65)
+      transform-origin right center
+      filter brightness(0) invert(1)
   &__img
     pos relative
     t 0
@@ -463,14 +498,18 @@ html.touchevents .progress
       h 474px
     @media $PortraitMax
       h 244px
-    &:hover
-      transform scale(1.05)
-      t -20px
-      @media $desktopMax
-        t -11px
-      @media $PortraitMax
-        t -5px
+    @media $Mobile370
+      h 195px
     
+    
+html:not(.touchevents) .products__img:hover
+  transform scale(1.05)
+  t -20px
+  @media $desktopMax
+    t -11px
+  @media $PortraitMax
+    t -5px    
+  
 .icat
   opacity 0
   visibility hidden
@@ -487,6 +526,10 @@ html.touchevents .progress
   letter-spacing .12em
   padding 27px 30px
   transition .7s opacity, .7s visibility
+  @media $PortraitMax
+    size 85px
+    fontify 9px 700 15px
+    padding 13px 16px
   &:after
     content ""
     pos absolute
@@ -496,6 +539,9 @@ html.touchevents .progress
     background-image url('../i/arr_sprite.png')
     background-repeat no-repeat
     background-position 0 0
+    @media $PortraitMax
+      l 13px
+      b 17px
   &:hover:after
     animation arrAnimation 2s infinite steps(30)
     
