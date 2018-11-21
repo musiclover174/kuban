@@ -177,6 +177,7 @@ export default class Index {
         
         bgLeft.style.width = (percWidth >= 100 ? 100 : percWidth) + '%'
         bgRight.style.width = 100 - (percWidth > 100 ? 100 : percWidth) + '%'
+        bgRight.style.left = (percWidth >= 100 ? 100 : percWidth) + '%'
         progressEl.style.height = percScroll + '%'
         
         if (percScroll === 100 || percWidth >= 100) {

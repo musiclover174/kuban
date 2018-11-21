@@ -2612,7 +2612,7 @@ body.compensate-for-scrollbar {
   content: "";
   position: absolute;
   left: 54px;
-  bottom: 52px;
+  bottom: 51px;
   width: 30px;
   height: 1px;
   background-color: #000;
@@ -2659,7 +2659,7 @@ html:not(.touchevents) .burger:not(.open):hover:before {
   top: 47px;
 }
 html:not(.touchevents) .burger:not(.open):hover:after {
-  bottom: 50px;
+  bottom: 48px;
 }
 html:not(.touchevents) .burger:not(.open):hover html:not(.touchevents) .burger__meat {
   -webkit-animation: burger-hover 1s infinite ease-in-out alternate forwards 200ms;
@@ -2772,7 +2772,7 @@ html.touchevents .burger:not(.open):hover .burger__meat {
 }
 @-webkit-keyframes burger-bottom {
   0% {
-    bottom: 52px;
+    bottom: 51px;
   }
   40% {
     bottom: 64px;
@@ -2790,7 +2790,7 @@ html.touchevents .burger:not(.open):hover .burger__meat {
 }
 @keyframes burger-bottom {
   0% {
-    bottom: 52px;
+    bottom: 51px;
   }
   40% {
     bottom: 64px;
@@ -2857,7 +2857,7 @@ html.touchevents .burger:not(.open):hover .burger__meat {
     bottom: 64px;
   }
   100% {
-    bottom: 52px;
+    bottom: 51px;
   }
 }
 @keyframes burger-bottom-invert {
@@ -2875,7 +2875,7 @@ html.touchevents .burger:not(.open):hover .burger__meat {
     bottom: 64px;
   }
   100% {
-    bottom: 52px;
+    bottom: 51px;
   }
 }
 .footer {
@@ -3194,6 +3194,7 @@ html.touchevents .burger:not(.open):hover .burger__meat {
   right: 0;
 }
 .bg__right:not(.bg__right_f) {
+  right: auto;
   display: none;
 }
 .bg__right .handler__img {
