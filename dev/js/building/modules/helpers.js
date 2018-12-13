@@ -90,7 +90,18 @@ function resizeWatcher() {
         })
     })
   }
-
 }
 
-export {fadeIn, fadeOut, scrollTo, visChecker, resizeWatcher}
+function elemVisCheck(elArray) {
+  window.addEventListener('scroll', () => {
+    for (let item of elArray) {
+      for (let elem of document.querySelectorAll(item)) {
+        if (visChecker(elem)) {
+          elem.setAttribute('visible', true)
+        }
+      }
+    }
+  })
+}
+
+export {fadeIn, fadeOut, scrollTo, visChecker, resizeWatcher, elemVisCheck}

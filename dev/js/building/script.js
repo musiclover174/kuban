@@ -1,13 +1,15 @@
-import {fadeIn, fadeOut, scrollTo, visChecker, resizeWatcher} from './modules/helpers'
+import {fadeIn, fadeOut, scrollTo, visChecker, resizeWatcher, elemVisCheck} from './modules/helpers'
 import Index from './modules/index'
 import Burger from './modules/burger'
 import Contacts from './modules/contacts'
 import Sticky from './modules/sticky'
 import Share from './modules/share'
+import Juices from './modules/juices'
 
 document.addEventListener('DOMContentLoaded', function(){
   
-  const burger = new Burger()
+  const burger = new Burger(),
+        elVisArray = ['.about__img', '.about p, .about__clients']
   
   if (document.body.classList.contains('index')) {
     const index = new Index(30)
@@ -36,7 +38,12 @@ document.addEventListener('DOMContentLoaded', function(){
     window.share = new Share()
   }
   
+  if (document.querySelectorAll('.js-scenes')) {
+    const juices = new Juices()
+  }
+  
   new resizeWatcher()
+  new elemVisCheck(elVisArray)
   
   let eventScroll
   try {

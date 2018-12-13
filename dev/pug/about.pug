@@ -1,0 +1,101 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+  
+    +b('main').content.bgfixed(style="background-image: url('img/about-map.jpg')")
+      .container
+        h1 О бренде
+        +b('section').breadcrumbs
+          +e.href(href="#") Главная
+          +e('span').delim / 
+      
+        +b('section').about
+          +e.row
+            +e.col
+              p Всё лучшее от природы впитывают сочные плоды, созревающие под жарким южным солнцем и тёплыми дождями Краснодарского края. Полные вкуса и витаминов, именно такие фрукты и овощи попадают в соки и нектары «Дары Кубани».
+              +e.img._img1.js-imrotator(src="img/about1.jpg")
+            +e.col
+              +e.img._img2.js-imrotator(src="img/about2.jpg")
+          +e.row
+            +e.col
+              p Кубань – историко-географическая область, охватывающая самые южные земли нашей Родины. Это лето России! Здесь наиболее длинный сезон сбора урожая и в действительности самые насыщенные и полезные яблоки, виноград, морковь и другие ценные культуры.
+            +e.col
+              p Наливные кубанские яблоки – это, конечно, наша главная гордость. Специфика южного климата сделала их идеальными априори. Вместе с тем, лишь убедившись в превосходном качестве каждого плода, мы отправляем собранный урожай на производственные линии.
+          +e.row
+            +e.img_img3._fruit(src="img/about3.png")
+          +e.row
+            +e.col
+              p Тропические фрукты в России не растут, но поступают к нам кратчайшим путем, прямо с портов Чёрного моря. Партнёры уже знают, как строго мы относимся к качеству сырья, поэтому поставляют исключительно спелые отборные плоды для соков и нектаров «Дары Кубани».
+              +e.img_img4._fruit(src="img/about4.png")
+            +e.col
+              +e.img_img5._fruit(src="img/about5.png")
+          +e.row
+            +e.col
+              +e.img_img6.js-imrotator(src="img/about6.jpg")
+            +e.col
+              +e.img_img7.js-imrotator(src="img/about7.jpg")
+          +e.row
+            p Мы искренне гордимся своей продукцией и регулярно убеждаемся на личном опыте: в каждом стакане соков и нектаров «Дары Кубани» – не только насыщенный первозданный вкус фруктов и овощей, но и максимальная польза этих сочных даров природы!
+          +e.fixed.js-scenes
+            +e.juices.js-scenes-positioner
+              +e.juices-img(src="img/iproducts7.png")
+              +e.juices-img(src="img/iproducts6.png")
+              +e.juices-main
+                +e.juices-img._apple(src="img/iproducts1.png")
+                +e.juices-apple._apple1(src="img/apple1.png")
+                +e.juices-apple._apple2(src="img/apple2.png")
+                +e.juices-apple._apple3(src="img/apple3.png")
+              +e.juices-img(src="img/iproducts2.png")
+              +e.juices-img._tomato(src="img/iproducts3.png")
+              +e.juices-img(src="img/iproducts4.png")
+              +e.juices-img(src="img/iproducts5.png")
+            +e.row.js-scenes-spacer(data-step="1")
+            +e.row.js-scenes-spacer(data-step="2")
+              +e.col
+                p Почётное место в линейке вкусов занимают яблочный и томатный «Дары Кубани». Каждый из них неповторим и представляет собой кладезь витаминов и минералов. Кроме того, эти соки рекомендованы Российской диабетической ассоциацией. 
+            +e.row.js-scenes-spacer(data-step="3")
+              +e.col
+                p Яблоки – самый распространенный в России фрукт. Наверно, именно поэтому яблочный сок считается самым любимым у нас в стране. Столь же очевиден и тот факт, что лучшими по своим вкусовым качествам и полезности всегда были и остаются южные кубанские яблоки! 
+            +e.row.js-scenes-spacer(data-step="4")
+              +e.col
+                p Скрупулёзно и строго мы выбираем как поставщиков, так и каждое яблочко. А если нас назовут «вредными» закупщиками, примем за комплимент. Ведь именно благодаря этому наши соки и нектары – самые что ни на есть полезные!
+          +e.row
+            +e.col
+              +e.img_img8.js-imrotator(src="img/about8.jpg")
+            +e.col
+              +e.img_img9.js-imrotator(src="img/about9.jpg")  
+          +e.row
+            p На сегодняшний день соки и нектары «Дары Кубани» можно приобрести в десятках магазинов крупных мегаполисов и небольших городов. С нами работают ведущие торговые сети.
+          +e('ul').clients
+            +e.client
+              img(src="img/where1.png")
+            +e.client
+              img(src="img/where2.png")
+            +e.client
+              img(src="img/where3.png")
+            +e.client
+              img(src="img/where4.png")
+            +e.client
+              img(src="img/where5.png")
+            +e.client
+              img(src="img/where6.png")
+            +e.client
+              img(src="img/where7.png")
+            +e.client
+              img(src="img/where8.png")
+            +e.client
+              img(src="img/where9.png")
+          +e.bottom
+            +e.bottom-imgover
+              +e.bottom-img(src="img/bottom.jpg")
+              +e.bottom-mark(src="img/mark.png")
+            +e('p').bottom-text В 2018 году соки и нектары «Дары Кубани»  получили звание «Кубанский продукт»
+          +e.tocat(href="#") Перейти в&nbsp;каталог
+    include layout/__footer
+    
+    include layout/__scripts

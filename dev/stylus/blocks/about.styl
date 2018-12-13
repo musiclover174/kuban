@@ -1,0 +1,323 @@
+.bgfixed
+  background-position center
+  background-repeat no-repeat
+  background-attachment fixed
+  pos relative
+  
+.about
+  pt 99px
+  @media $desktopMin
+    pt 30px
+  @media $PortraitMedium
+    pt 0
+  p
+    pos relative
+    top -40px
+    opacity 0
+    visibility hidden
+    transition .7s top, .7s opacity, .7s visibility
+    &[visible]
+      top 0
+      opacity 1
+      visibility visible
+  &__row
+    df(flex-start, space-between)
+    perspective 1000px
+    @media $LandscapeMax
+      flex-direction column
+      justify-content flex-start
+    p:not([class])
+      font-family $os
+      fontify 28px 400 36px
+      max-width 1110px
+      @media $desktopMax
+        fontify 24px 400 32px
+      @media $desktopTablet
+        fontify 21px 400 29px
+      @media $LandscapeMin
+        fontify 17px 400 25px
+    & + &
+      mt 173px
+      @media $LandscapeMax
+        mt 80px
+  &__col
+    w calc(50% - 30px)
+    @media $LandscapeMax
+      w 100%
+    & + &
+      ml 60px
+      @media $LandscapeMax
+        ml 0
+        mt 40px
+  &__img
+    max-width 100%
+    opacity 0
+    &:not(&_fruit)
+      transform translate3d(0, 150px, -50px) rotate3d(1.4, -.3, 0, 75deg)
+      transform-style preserve-3d
+      will-change transform
+    transition 1.7s transform, 1.7s opacity
+    &[visible]
+      opacity 1
+      transform translate3d(0px, 0, 0) rotate3d(0, 0, 0, 20deg)
+    &_img1
+      db()
+      mt 172px
+      mr 0
+      ml auto
+      @media $LandscapeMax
+        dn()
+    &_img2
+      mt 116px
+      @media $LandscapeMax
+        mt 0
+    &_img3
+      margin 0 auto
+    &_img4
+      mt 160px
+      @media $LandscapeMax
+        dn()
+    &_img5
+      mt 100px
+      @media $LandscapeMax
+        dn()
+    &_img7
+      mt 272px
+      @media $LandscapeMax
+        dn()
+    &_img6
+      @media $LandscapeMax
+        mt -80px
+    &_img8
+      db()
+      mr 0
+      ml auto
+      @media $LandscapeMax
+        dn()
+    &_img9
+      mt 120px
+      @media $LandscapeMax
+        mt 0
+  &__fixed
+    pos relative
+    mt 78px
+  &__juices
+    @media $LandscapeMaxFrom
+      pos absolute
+      z-index 1
+      w 100vw
+      t 0
+      h 100vh
+      r 50%
+      mr -50vw
+      will-change transform
+      &.fixed
+        pos fixed
+        t 50%
+        transform translateY(-50%)
+        @media $desktopMin
+          transform translateY(-50%)
+      &.scene2
+        w 485px
+        r calc((100vw - 1361px) / 2)
+        mr 0
+        transition .7s .7s width, .7s .7s right, .7s .7s margin
+        @media $lDesktopSmall
+          r calc((100vw - 1197px) / 2)
+        @media $desktopMax
+          r 55px
+        & .about__juices-img:not(.about__juices-img_tomato):not(.about__juices-img_apple)
+          opacity 0
+          visibility hidden
+          t -30px
+          w 0
+          transition .7s opacity, .7s visibility, .7s top, .7s .7s width 
+      &.scene3
+        justify-content center
+        transition none
+        & .about__juices-img.about__juices-img_tomato
+          ml 28px
+        & .about__juices-img:not(.about__juices-img_apple)
+          opacity 0
+          visibility hidden
+          t -30px
+          w 0
+          transition .7s opacity, .7s visibility, .7s top, .7s .7s width 
+      &.scene4
+        & .about__juices-img.about__juices-img_apple
+          opacity 0
+          transition .7s opacity
+        & .about__juices-apple_apple1
+          l -200px
+          transform rotate(0deg)
+        & .about__juices-apple_apple2
+          l -20px
+          transform rotate(0deg)
+        & .about__juices-apple_apple3
+          l 250px
+      &.bottom
+        b 0
+        t auto
+        r 0
+    df(center, space-between)
+    @media $desktopMax
+      w 120vw
+    @media $desktopMin
+      w 1170px
+    @media $desktopTablet
+      w 1050px
+    @media $LandscapeMax
+      w 100%
+    & ~ ^[0]__row
+      h 100vh
+      mt 0
+      df(center, flex-start)
+      @media $LandscapeMax
+        h auto
+        & + ^[0]__row
+          mt 40px
+    & + ^[0]__row
+      @media $LandscapeMax
+        dn()
+    &-main
+      pos relative
+    &-img
+      pos relative
+      t 0
+      w 200px
+      z-index 1
+      transition .7s opacity, .7s visibility, .7s top
+      @media $desktopMin
+        w 170px
+        ^[0]__juices > &:first-child
+          dn()
+      @media $desktopTablet
+        ^[0]__juices > &:last-child
+          dn()
+      @media $LandscapeMedium
+        w 126px
+      @media $LandscapeMin
+        ^[0]__juices > &:nth-child(5),
+        ^[0]__juices > &:nth-child(6)
+          dn()
+      @media $PortraitMedium
+        w 100px
+      @media $Mobile370
+        w 80px
+    &-apple
+      pos absolute
+      transition .7s left, .7s right, .7s transform
+      will-change transform
+      @media $LandscapeMedium
+        dn()
+      &_apple1
+        l 4px
+        t 40px
+        w 191px
+        transform rotate(21deg)
+        @media $desktopMin
+          w 160px
+          t 10px
+      &_apple2
+        l 8px
+        t 460px
+        w 184px
+        transform rotate(21deg)
+        @media $desktopMin
+          w 156px
+          t 414px
+          l 7px
+      &_apple3
+        l 6px
+        t 254px
+        w 188px
+        @media $desktopMin
+          w 160px
+          l 5px
+          t 213px
+  &__clients
+    mt 95px
+    pos relative
+    t -20px
+    opacity 0
+    visibility hidden
+    df()
+    flex-wrap wrap
+    transition .7s opacity, .7s visibility, .7s top
+    &[visible]
+      t 0
+      opacity 1
+      visibility visible
+    @media $PortraitMedium
+      justify-content space-between
+  &__client
+    w 20%
+    h 80px
+    dfv(center, center)
+    mb 80px
+    @media $desktopMedium
+      w 25%
+    @media $LandscapeMedium
+      w calc(100% / 3)
+    @media $LandscapeMin
+      w 50%
+    @media $PortraitMedium
+      w 45%
+      h 70px
+      mb 60px
+  &__bottom
+    mt 100px
+    @media $LandscapeMedium
+      mt 40px
+    &-imgover
+      pos relative
+    &-img
+      max-width 100%
+    &-mark
+      pos absolute
+      l 50%
+      b 0
+      transform translate(-50%, 50%)
+      @media $LandscapeMedium
+        size 140px
+    &-text
+      max-width 590px
+      margin 207px auto -18px
+      font-family $os
+      fontify 28px 400 36px
+      text-align center
+      @media $desktopMax
+        fontify 24px 400 32px
+      @media $desktopTablet
+        fontify 21px 400 29px
+      @media $LandscapeMin
+        fontify 17px 400 25px
+      @media $LandscapeMedium
+        mt 130px
+  &__tocat
+    pos absolute
+    z-index 1
+    r 0
+    b 0
+    size 130px
+    color black
+    bgc white
+    font-family $sans
+    fontify 11px 700 17px
+    text-transform uppercase
+    letter-spacing .12em
+    padding 27px 30px
+    transition .7s opacity, .7s visibility
+    @media $PortraitMax
+      dn()
+    &:after
+      content ""
+      pos absolute
+      size 33px 17px
+      l 31px
+      b 28px
+      background-image url('../i/arr_sprite.png')
+      background-repeat no-repeat
+      background-position 0 0
+    &:hover:after
+      animation arrAnimation 2s infinite steps(30)
