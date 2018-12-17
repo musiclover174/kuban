@@ -9,7 +9,7 @@ import Juices from './modules/juices'
 document.addEventListener('DOMContentLoaded', function(){
   
   const burger = new Burger(),
-        elVisArray = ['.about__img', '.about p, .about__clients']
+        elVisArray = ['.about__img', '.about p, .about__clients, .catalog__img, .catalog__elem-img']
   
   if (document.body.classList.contains('index')) {
     const index = new Index(30)
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function(){
     shave(sh, sh.getAttribute('data-height'))
   }
   
-  if (document.querySelectorAll('.js-share')) {
+  if (document.querySelectorAll('.js-share').length) {
     for (let shBtn of document.querySelectorAll('.js-share')) {
       shBtn.addEventListener('click', (e) => {
         e.preventDefault()
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function(){
     window.share = new Share()
   }
   
-  if (document.querySelectorAll('.js-scenes')) {
+  if (document.querySelectorAll('.js-scenes').length) {
     const juices = new Juices()
   }
   
