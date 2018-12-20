@@ -36,7 +36,7 @@ export default class Index {
         document.body.classList.add('iload')
         
         this.scrollLib()
-        this.carInit()
+        //this.carInit()
         this.textChanger()
       }
     }
@@ -180,11 +180,11 @@ export default class Index {
         bgRight.style.left = (percWidth >= 100 ? 100 : percWidth) + '%'
         progressEl.style.height = percScroll + '%'
         
-        if (percScroll === 100 || percWidth >= 100) {
+        /*if (percScroll === 100 || percWidth >= 100) {
           document.body.classList.add('scrollEnd')
         } else {
           document.body.classList.remove('scrollEnd')
-        }
+        }*/
       }
     }
 

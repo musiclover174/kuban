@@ -1,0 +1,174 @@
+.card
+  &__fixed
+    pos relative
+    mt 78px
+    @media $LandscapeMin
+      mt 0
+  &__row
+    h 100vh
+    mt 0
+    df(flex-start, space-between)
+    @media $LandscapeMin
+      h auto
+      mb 20px
+      flex-direction column
+      &[data-step="3"]
+        dn()
+  &__spacer
+    h 100vh
+    db()
+  &__text
+    fontify 28px 400 36px
+    max-width 400px
+    @media $desktopMax
+      fontify 24px 400 32px
+    @media $desktopTablet
+      fontify 21px 400 29px
+    @media $LandscapeMin
+      fontify 17px 400 25px
+      max-width none
+      & + &
+        mt 60px
+    &:nth-child(1):not(&_text1)
+      align-self flex-start
+      pt 10%
+      @media $LandscapeMin
+        pt 0
+    &_text1
+      align-self center
+      @media $LandscapeMin
+        align-self flex-start
+    &:nth-child(2)
+      align-self flex-end
+      pb 10%
+      @media $LandscapeMin
+        align-self flex-start
+        pb 0
+  &__juices
+    pos relative
+    transition .7s opacity
+    @media $LandscapeMax
+      transform scale(.75)
+    @media $LandscapeMin
+      transform scale(1)
+      mt 50px
+    @media $LandscapeMinFrom
+      pos absolute
+      z-index 1
+      w 200px
+      t 0
+      l 50%
+      ml -100px
+      will-change transform
+      &.fixed
+        pos fixed
+        t 50%
+        transform translateY(-50%)
+        @media $LandscapeMax
+          transform translateY(-50%) scale(.75)
+      &.scene2
+        & ^[1]-element_element1
+          l 4px
+          t 40px
+          transform rotate(21deg)
+        & ^[1]-element_element2
+          l 8px
+          t 460px
+          transform rotate(-19deg)
+        & ^[1]-element_element3
+          l 6px
+          t 248px
+      &.scene3
+        & ^[1]-main-hider
+          h 100%
+      &.scene4
+        & ^[1]-img_small,
+        & ^[1]-img_big
+          opacity 1
+          visibility visible
+          b 0
+      &.bottom
+        b 0
+        t auto
+        r 0
+        opacity 0
+    &-main
+      pos relative
+      h 685px
+      @media $LandscapeMin
+        h auto
+        margin 60px 0
+      &-hider
+        @media $LandscapeMinFrom
+          h 0
+          pos absolute
+          b 0
+          w 100%
+          overflow hidden
+          transition .7s height
+    &-img
+      pos relative
+      z-index 1
+      transition .7s opacity, .7s visibility, .7s top
+      @media $LandscapeMin
+        max-width 80%
+      &_element
+        pos absolute
+        l 0
+        b 0
+        @media $LandscapeMin
+          pos relative
+          margin 0 auto
+          db()
+      &_small
+        pos absolute
+        r calc(100% + 80px)
+        opacity 0
+        visibility hidden
+        b 30px
+        transition .7s opacity, .7s visibility, .7s bottom
+        @media $LandscapeMin
+          opacity 1
+          visibility visible
+          b 0
+          pos relative
+          r auto
+          margin 0 auto
+          db()
+      &_big
+        h 100%
+        pos absolute
+        l calc(100% + 80px)
+        b 30px
+        opacity 0
+        visibility hidden
+        transition .7s opacity, .7s visibility, .7s bottom
+        @media $LandscapeMin
+          opacity 1
+          visibility visible
+          b 0
+          h auto
+          pos relative
+          l auto
+          margin 0 auto
+          db()
+    &-element
+      pos absolute
+      transition .7s left, .7s right, .7s transform, .7s top
+      will-change transform
+      @media $LandscapeMin
+        dn()
+      &_element1
+        t 40px
+        w 191px
+        l -200px
+        transform rotate(0deg)
+      &_element2
+        l -20px
+        t 320px
+        w 184px
+        transform rotate(0deg)
+      &_element3
+        l 250px
+        t 134px
+        w 188px

@@ -5,6 +5,7 @@ import Contacts from './modules/contacts'
 import Sticky from './modules/sticky'
 import Share from './modules/share'
 import Juices from './modules/juices'
+import Products from './modules/products'
 
 document.addEventListener('DOMContentLoaded', function(){
   
@@ -23,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function(){
   
   if (document.querySelector('.js-sticky')) {
     const sticky = new Sticky(20, 0)
+  }
+
+  if (document.querySelector('.js-iproducts')) {
+    const products = new Products()
   }
   
   for (let sh of document.querySelectorAll('.js-shave')) {

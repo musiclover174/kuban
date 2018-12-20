@@ -1,0 +1,66 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+  
+    +b('main').content._card
+      .container
+        h1 Яблочный сок
+        +b('section').breadcrumbs
+          +e.href(href="#") Главная
+          +e('span').delim / 
+          +e.href(href="#") Вкусы
+          +e('span').delim / 
+      
+        +b('section').card
+          +e.fixed.js-scenes
+            +e.row.js-scenes-spacer(data-step="1")
+              +e.text._text1 Самым распространенным российским фруктом, безусловно, является яблоко.
+            +e.row.js-scenes-spacer(data-step="2")
+              +e.text._text2 Кубанские яблоки отличаются от яблок из других регионов России. Они получают намного больше солнца, от чего их сладость более глубокая и выразительная.
+              +e.text._text3 Именно поэтому наш яблочный сок совсем не нужно подслащивать.
+            +e.row.js-scenes-spacer(data-step="3")
+            +e.row.js-scenes-spacer(data-step="4")
+              +e.text._text4 Есть такое словосочетание «яблоки медовые». Оно точно про яблоки с Кубани.
+            +e.juices.js-scenes-positioner
+              +e.juices-img._small(src="img/iproducts1-small.png")
+              +e.juices-main
+                +e.juices-main-hider
+                  +e.juices-img._element(src="img/iproducts1.png")
+                +e.juices-element._element1(src="img/apple1.png")
+                +e.juices-element._element2(src="img/apple2.png")
+                +e.juices-element._element3(src="img/apple3.png")
+              +e.juices-img._big(src="img/iproducts1-big.png")
+
+    span.card__spacer
+
+    +b('section').products._card
+      span.bg__table(style="background-image: url('img/table.jpg')")
+      +e.car.swiper-container.js-iproducts
+        .swiper-wrapper
+          .swiper-slide
+            +e.href(href="#")
+              +e.img(src="img/iproducts2.png")
+          .swiper-slide
+            +e.href(href="#")
+              +e.img(src="img/iproducts3.png")
+          .swiper-slide
+            +e.href(href="#")
+              +e.img(src="img/iproducts4.png")
+          .swiper-slide
+            +e.href(href="#")
+              +e.img(src="img/iproducts5.png")
+          .swiper-slide
+            +e.href(href="#")
+              +e.img(src="img/iproducts6.png")
+          .swiper-slide
+            +e.href(href="#")
+              +e.img(src="img/iproducts7.png")
+      .swiper-button-prev
+      .swiper-button-next
+
+    include layout/__scripts

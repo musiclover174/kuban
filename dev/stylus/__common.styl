@@ -25,6 +25,10 @@ body:not(.index) .logo
   pt 132px
   pb 142px
   bgc #f9f9f9
+  &_card
+    pos relative
+    @media $LandscapeMin
+      pb 60px
   @media $desktopMax
     pl 55px
     pr 55px
@@ -390,6 +394,8 @@ div[class\^="table-scroller"]
   pl 18px
   mb 70px
   color black
+  @media $LandscapeMin
+    mb 40px
   &__href
     color black
     fontify 11px 700 14px
