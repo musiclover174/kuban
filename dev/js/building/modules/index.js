@@ -36,7 +36,6 @@ export default class Index {
         document.body.classList.add('iload')
         
         this.scrollLib()
-        //this.carInit()
         this.textChanger()
       }
     }
@@ -56,31 +55,10 @@ export default class Index {
       })
     })
   }
-  carInit() {
-    new Swiper('.js-iproducts', {
-      loop: true,
-      speed: 1200,
-      slidesPerView: 3,
-      spaceBetween: 60,
-      navigation: {
-        nextEl: '.js-iproducts ~ .swiper-button-next',
-        prevEl: '.js-iproducts ~ .swiper-button-prev',
-      },
-      breakpoints: {
-        900: {
-          autoHeight: true
-        }
-      }
-    })
-  }
   textChanger()  {
     let h = parseInt(document.querySelector('.js-img-handler').style.height)
     
     document.querySelector('.handler__texts').classList.add('show')
-   
-    window.addEventListener('scroll', () => {
-      //console.log(document.documentElement.scrollTop / parseInt(document.querySelector('.js-img-handler').style.height))
-    })
     
     var controller = new ScrollMagic.Controller()
     
@@ -139,7 +117,6 @@ export default class Index {
     
   }
   scrollLib() {
-    // 83 - количество слайдов секвенции
     let scrollTop, ceil, percentage,
         imgQuantity = 100,
         lostFramesPerc = Math.floor(window.innerHeight / 200) / imgQuantity,
@@ -179,12 +156,6 @@ export default class Index {
         bgRight.style.width = 100 - (percWidth > 100 ? 100 : percWidth) + '%'
         bgRight.style.left = (percWidth >= 100 ? 100 : percWidth) + '%'
         progressEl.style.height = percScroll + '%'
-        
-        /*if (percScroll === 100 || percWidth >= 100) {
-          document.body.classList.add('scrollEnd')
-        } else {
-          document.body.classList.remove('scrollEnd')
-        }*/
       }
     }
 

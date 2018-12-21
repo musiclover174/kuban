@@ -9,22 +9,6 @@
   bgc white
   &__imgover
     pos relative
-    /*&:before
-      content ""
-      pos absolute
-      t -60px
-      l 50%
-      size 97px 19px
-      ml -49px
-      background url('../i/preload_top.jpg') no-repeat center
-    &:after
-      content ""
-      pos absolute
-      b -70px
-      l 50%
-      size 195px 44px
-      ml -98px
-      background url('../i/preload_bottom.jpg') no-repeat center*/
   
 .informer
   pos fixed
@@ -88,6 +72,7 @@
 
 .js-imgloader
   h 0
+  overflow hidden
         
 .bg
   pos fixed
@@ -179,7 +164,10 @@ body.scroll
     db()
   .bg__right_f
     w 0
-    
+
+body:not(.iload)
+  overflow-y scroll
+
 .handler
   pos relative
   z-index 2
@@ -540,6 +528,9 @@ html:not(.touchevents) .products__img:hover
   letter-spacing .12em
   padding 27px 30px
   transition .7s opacity, .7s visibility
+  &_left
+    l 0
+    r auto
   @media $PortraitMax
     size 85px
     fontify 9px 700 15px
@@ -556,6 +547,8 @@ html:not(.touchevents) .products__img:hover
     @media $PortraitMax
       l 13px
       b 17px
+  &_left:after
+    transform scaleX(-1)
   &:hover:after
     animation arrAnimation 2s infinite steps(30)
     

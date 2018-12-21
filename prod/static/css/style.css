@@ -234,9 +234,6 @@ body {
 body {
   overflow-x: hidden;
 }
-body.index:not(.pace-done) {
-  overflow: hidden;
-}
 body.index .content {
   padding: 0;
 }
@@ -3041,22 +3038,6 @@ html.touchevents .burger:not(.open):hover .burger__meat {
 }
 .preloader__imgover {
   position: relative;
-/*&:before
-      content ""
-      pos absolute
-      t -60px
-      l 50%
-      size 97px 19px
-      ml -49px
-      background url('../i/preload_top.jpg') no-repeat center
-    &:after
-      content ""
-      pos absolute
-      b -70px
-      l 50%
-      size 195px 44px
-      ml -98px
-      background url('../i/preload_bottom.jpg') no-repeat center*/
 }
 .informer {
   position: fixed;
@@ -3133,6 +3114,7 @@ html.touchevents .burger:not(.open):hover .burger__meat {
 }
 .js-imgloader {
   height: 0;
+  overflow: hidden;
 }
 .bg {
   position: fixed;
@@ -3300,6 +3282,9 @@ body.scroll .bg__right {
 }
 body.scroll .bg__right_f {
   width: 0;
+}
+body:not(.iload) {
+  overflow-y: scroll;
 }
 .handler {
   position: relative;
@@ -3940,6 +3925,10 @@ html:not(.touchevents) .products__img:hover {
   -webkit-transition: 0.7s opacity, 0.7s visibility;
   transition: 0.7s opacity, 0.7s visibility;
 }
+.icat_left {
+  left: 0;
+  right: auto;
+}
 @media (max-width: 670px) {
   .icat {
     width: 85px;
@@ -3966,6 +3955,10 @@ html:not(.touchevents) .products__img:hover {
     left: 13px;
     bottom: 17px;
   }
+}
+.icat_left:after {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 .icat:hover:after {
   -webkit-animation: arrAnimation 2s infinite steps(30);
