@@ -12,7 +12,16 @@ export default class Index {
       fadeOut(this.block, 600, () => {
         this.block.parentNode.removeChild(this.block)
         this.preloadBlock.parentNode.removeChild(this.preloadBlock)
-        this.animate()
+        if (document.querySelector('html').classList.contains('touchevents') && window.innerWidth <= 500) {
+          const opening = document.querySelector('.opening')
+          opening.parentNode.removeChild(opening)
+          
+          document.body.classList.add('iload')
+          this.scrollLib()
+          this.textChanger()
+        } else {
+          this.animate()
+        }
       })
     })
     
@@ -25,6 +34,7 @@ export default class Index {
   animate() {
     let elems = document.querySelectorAll('.js-opening-img'),
         delay = this.delay
+
     if (elems.length > 1) {
       elems[0].parentNode.removeChild(elems[0])
       setTimeout(this.animate.bind(this), delay)
