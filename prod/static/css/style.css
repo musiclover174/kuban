@@ -4019,8 +4019,8 @@ body.scrollEnd .icat {
   opacity: 1;
   visibility: visible;
 }
-html.exiforientation .bg__left,
-html.exiforientation .bg__right {
+html.no-backgroundcliptext .bg__left,
+html.no-backgroundcliptext .bg__right {
   background-attachment: initial;
 }
 @-webkit-keyframes line {
