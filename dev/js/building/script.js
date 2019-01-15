@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', function(){
     const juices = new Juices()
   }
 
+  if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+    document.querySelector('html').classList.add('ios');
+  }
+
   new resizeWatcher()
   new elemVisCheck(elVisArray)
   

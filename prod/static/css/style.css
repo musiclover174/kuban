@@ -4019,8 +4019,12 @@ body.scrollEnd .icat {
   opacity: 1;
   visibility: visible;
 }
-html.no-backgroundcliptext .bg__left,
-html.no-backgroundcliptext .bg__right {
+html.ios .handler__text-title span {
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+html.ios .bg__left,
+html.ios .bg__right {
   background-attachment: initial;
 }
 @-webkit-keyframes line {
