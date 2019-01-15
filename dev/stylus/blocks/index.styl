@@ -1,7 +1,7 @@
 .preloader
   dfv(center, center)
   pos fixed
-  z-index 5
+  z-index 7
   w 100vw
   h 100vh
   t 0
@@ -12,7 +12,7 @@
   
 .informer
   pos fixed
-  z-index 6
+  z-index 8
   w 158px
   white-space nowrap
   r -104px
@@ -310,8 +310,8 @@ body:not(.iload)
       .handler__text-dsc
         max-width 993px
         margin 0 auto
-        @media $desktopMin
-          db()
+        // @media $desktopMin
+        //   db()
         @media $PortraitMax
           fontify 18px 400 26px
         @media $PortraitMin
@@ -321,9 +321,10 @@ body:not(.iload)
       l 27%
       b 18%
       @media $lDesktopSmall
-        max-width 572px
+        max-width 472px
+      @media $desktopMedium
+        max-width 402px
       @media $desktopMin
-        max-width 412px
         bottom auto
         t calc(10% + 60px)
         right auto
@@ -335,7 +336,9 @@ body:not(.iload)
       t 12%
       @media $lDesktopSmall
         max-width 612px
-        r 5%
+        r 11%
+      @media $desktopMedium
+        r 8%
       @media $desktopMin
         max-width 500px
         t calc(10% + 90px)
@@ -348,11 +351,11 @@ body:not(.iload)
         transform translateX(-50%)
     &_text4
       max-width 762px
-      r 12%
+      r 6%
       t 12%
       @media $lDesktopSmall
         max-width 612px
-        r 5%
+        r 4%
       @media $desktopMin
         max-width 500px
         t calc(10% + 90px)
@@ -400,10 +403,11 @@ body:not(.iload)
         fontify 80px 400 84px
       @media $desktopMedium
         fontify 60px 400 64px
-      @media $desktopMin
-        mb 0
+      // @media $desktopMin
+      //   mb 0
       @media $LandscapeMedium
         fontify 40px 400 54px
+        mb 15px
       @media $PortraitMin
         fontify 36px 400 50px
       span
@@ -424,8 +428,10 @@ body:not(.iload)
       transition .75s opacity, .75s bottom
       @media $lDesktopSmall
         fontify 21px 400 29px
-      @media $desktopMin
-        dn()
+      @media $LandscapeMedium
+        fontify 18px 400 26px
+      // @media $desktopMin
+      //   dn()
     
 .progress
   pos fixed
@@ -446,7 +452,7 @@ html.touchevents .progress
   z-index -1
   pb 58px
   opacity 0
-  transition .7s opacity
+  transition .7s opacity, .7s visibility, .7s .7s z-index
   @media $desktopMax
     pb 61px
   @media $PortraitMax
@@ -458,7 +464,6 @@ html.touchevents .progress
     z-index 1
     opacity 1
     z-index -1
-    background-image: url('/img/ileft.jpg')
     h 100vh
     background-size cover
     .bg__table
@@ -506,7 +511,7 @@ html.touchevents .progress
     
 html:not(.touchevents) .products__img:hover
   transform scale(1.05)
-  t -20px
+  t -18px
   @media $desktopMax
     t -11px
   @media $PortraitMax
@@ -564,8 +569,10 @@ html:not(.touchevents) .products__img:hover
     
 body.scrollEnd 
   .products
-    opacity 1
     z-index 2
+    opacity 1
+    visibility visible
+    transition .7s opacity, .7s visibility
   .handler,
   .handler__img
     opacity 0

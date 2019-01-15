@@ -115,8 +115,6 @@
         pos fixed
         t 50%
         transform translateY(-50%)
-        @media $desktopMin
-          transform translateY(-50%)
       &.scene2
         w 485px
         r calc((100vw - 1361px) / 2)
@@ -136,7 +134,7 @@
         justify-content center
         transition none
         & .about__juices-img.about__juices-img_tomato
-          ml 28px
+          ml 29px
         & .about__juices-img:not(.about__juices-img_apple)
           opacity 0
           visibility hidden
@@ -158,7 +156,16 @@
       &.bottom
         b 0
         t auto
-        r 0
+        right 0 !important
+        & .about__juices-apple_apple1
+          l -100vw
+          t -50vh
+        & .about__juices-apple_apple2
+          l 100vw
+          t 100vh
+        & .about__juices-apple_apple3
+          l 100vw
+          t -50vh
     df(center, space-between)
     @media $desktopMax
       w 120vw
@@ -189,9 +196,8 @@
       transition .7s opacity, .7s visibility, .7s top
       @media $desktopMin
         w 170px
-        ^[0]__juices > &:first-child
-          dn()
-      @media $desktopTablet
+      @media $LandscapeMax
+        ^[0]__juices > &:first-child,
         ^[0]__juices > &:last-child
           dn()
       @media $LandscapeMedium
@@ -206,7 +212,7 @@
         w 80px
     &-apple
       pos absolute
-      transition .7s left, .7s right, .7s transform
+      transition .7s left, .7s right, .7s transform, .7s top
       will-change transform
       @media $LandscapeMedium
         dn()

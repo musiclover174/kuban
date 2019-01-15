@@ -20,12 +20,14 @@
       content ""
       pos absolute
       size 33px 17px
-      l 50%
-      t 50%
+      l 48px
+      t 57px
       background-image url('../i/arr_sprite.png')
       background-repeat no-repeat
       background-position 0 0
-      transform translate(-50%, -50%)
+      @media $LandscapeMax
+        l 19px
+        t 27px
     &:not(.disabled):hover
       background transparent
     &:not(.disabled):hover:after

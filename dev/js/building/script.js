@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   
   if (document.querySelector('.js-sticky')) {
-    const sticky = new Sticky(20, 0)
+    const sticky = new Sticky(200, 0)
   }
 
   if (document.querySelector('.js-iproducts')) {

@@ -7,6 +7,8 @@
   &__row
     h 100vh
     mt 0
+    pos relative
+    z-index 2
     df(flex-start, space-between)
     @media $LandscapeMin
       h auto
@@ -17,18 +19,28 @@
   &__spacer
     h 100vh
     db()
+  &__mobile
+    mt 50px
+    text-align center
+    @media $LandscapeMinFrom
+      dn()
+    &-img
+      max-width 100%
   &__text
     fontify 28px 400 36px
     max-width 400px
     @media $desktopMax
       fontify 24px 400 32px
-    @media $desktopTablet
+    @media $desktopMin
       fontify 21px 400 29px
+      max-width 270px
     @media $LandscapeMin
       fontify 17px 400 25px
       max-width none
       & + &
         mt 60px
+        @media $LandscapeMin
+          mt 20px
     &:nth-child(1):not(&_text1)
       align-self flex-start
       pt 10%
@@ -47,11 +59,13 @@
   &__juices
     pos relative
     transition .7s opacity
-    @media $LandscapeMax
-      transform scale(.75)
+    @media $desktopMin
+      transform scale(.7)
     @media $LandscapeMin
-      transform scale(1)
-      mt 50px
+      dn()
+      // transform scale(1)
+      // mt 50px
+      // df(flex-end, flex-start)
     @media $LandscapeMinFrom
       pos absolute
       z-index 1
@@ -64,8 +78,8 @@
         pos fixed
         t 50%
         transform translateY(-50%)
-        @media $LandscapeMax
-          transform translateY(-50%) scale(.75)
+        @media $desktopMin
+          transform translateY(-50%) scale(.7)
       &.scene2
         & ^[1]-element_element1
           l 4px
@@ -97,7 +111,7 @@
       h 685px
       @media $LandscapeMin
         h auto
-        margin 60px 0
+        // margin 60px 0
       &-hider
         @media $LandscapeMinFrom
           h 0
@@ -110,8 +124,8 @@
       pos relative
       z-index 1
       transition .7s opacity, .7s visibility, .7s top
-      @media $LandscapeMin
-        max-width 80%
+      // @media $LandscapeMin
+      //   max-width 80%
       &_element
         pos absolute
         l 0

@@ -18,6 +18,8 @@
       opacity 0
       transform translate(-50%, -50%)
       transition 1.5s opacity
+      @media $desktopMin
+        max-width 270px
       @media $LandscapeMax
         max-width 252px
       @media $LandscapeMin
@@ -79,6 +81,8 @@
       margin 33px auto 0
       @media $lDesktopSmall
         fontify 17px 400 25px
+      @media $desktopMin
+        max-width 270px
   &__img
     db()
     max-width 100%
@@ -101,9 +105,15 @@
       ml auto
     &_img1
       mt -36%
+      @media $desktopMin
+        mt -16%
     &_img2
       mt 80px
     &_img8
       mt -45%
+      @media $desktopMin
+        mt -35%
     &_img13
       mt -57%
+      @media $desktopMin
+        mt -37%
