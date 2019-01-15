@@ -4019,6 +4019,10 @@ body.scrollEnd .icat {
   opacity: 1;
   visibility: visible;
 }
+html.exiforientation .bg__left,
+html.exiforientation .bg__right {
+  background-attachment: initial;
+}
 @-webkit-keyframes line {
   from {
     background-position: 50px 0;

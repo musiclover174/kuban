@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function(){
   if (document.querySelectorAll('.js-scenes').length) {
     const juices = new Juices()
   }
-  
+
   new resizeWatcher()
   new elemVisCheck(elVisArray)
   
