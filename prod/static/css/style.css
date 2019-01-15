@@ -3273,7 +3273,7 @@ html.touchevents .bg__left .handler__img {
 }
 @media (max-width: 670px) {
   html.touchevents .bg__left .handler__img {
-    left: calc((100vw - 785px) / 2);
+    left: calc((100vw - 741px) / 2);
   }
 }
 @media (max-width: 370px) {
@@ -3291,7 +3291,7 @@ html.touchevents .bg__right .handler__img {
 }
 @media (max-width: 670px) {
   html.touchevents .bg__right .handler__img {
-    right: calc((100vw - 785px) / 2);
+    right: calc((100vw - 741px) / 2);
   }
 }
 @media (max-width: 370px) {
