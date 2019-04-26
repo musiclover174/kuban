@@ -83,15 +83,15 @@
       &.scene2
         & ^[1]-element_element1
           l 4px
-          t 40px
+          t -10px
           transform rotate(21deg)
         & ^[1]-element_element2
           l 8px
-          t 460px
-          transform rotate(-19deg)
+          t 410px
+          transform rotate(-5deg)
         & ^[1]-element_element3
           l 6px
-          t 248px
+          t 201px
       &.scene3
         & ^[1]-main-hider
           h 100%
@@ -168,21 +168,22 @@
           db()
     &-element
       pos absolute
+      size 187px 303px
       transition .7s left, .7s right, .7s transform, .7s top
       will-change transform
       @media $LandscapeMin
         dn()
       &_element1
         t 40px
-        w 191px
+        // w 191px
         l -200px
         transform rotate(0deg)
       &_element2
         l -20px
         t 320px
-        w 184px
+        // w 184px
         transform rotate(0deg)
       &_element3
         l 250px
         t 134px
-        w 188px
+        // w 188px

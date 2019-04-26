@@ -19,23 +19,24 @@ body:not(.index) .logo
   @media $desktopMax
     max-width 100%
 .content
-  min-height calc(100vh - 130px)
-  pt 132px
-  pb 142px
-  bgc #f9f9f9
+  &:not(&_p404)
+    min-height calc(100vh - 130px)
+    pt 132px
+    pb 142px
+    bgc #f9f9f9
+    @media $desktopMax
+      pl 55px
+      pr 55px
+    @media $desktopTablet
+      pt 190px
+      pl 30px
+      pr 30px
+    @media $PortraitMax
+      pt 140px
   &_card
     pos relative
     @media $LandscapeMin
       pb 60px
-  @media $desktopMax
-    pl 55px
-    pr 55px
-  @media $desktopTablet
-    pt 190px
-    pl 30px
-    pr 30px
-  @media $PortraitMax
-    pt 140px
   &_text
     pos relative
     .container
@@ -58,13 +59,13 @@ body:not(.index) .logo
       pb 142px
   h1:not([class])
     color $red
-    fontify 96px 700 100px
+    fontify 76px 700 80px
     margin 63px 0 35px
     text-align center
     @media $desktopMedium
-      fontify 80px 700 84px
-    @media $LandscapeMin
       fontify 60px 700 64px
+    @media $LandscapeMin
+      fontify 48px 700 52px
     @media $PortraitMedium
       fontify 35px 700 40px
   h2:not([class])

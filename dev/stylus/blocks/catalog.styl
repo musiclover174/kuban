@@ -18,6 +18,10 @@
       opacity 0
       transform translate(-50%, -50%)
       transition 1.5s opacity
+      /html.no-smil ^[-1]:last-child &
+        t auto
+        b 0
+        transform translateX(-50%)
       @media $desktopMin
         max-width 270px
       @media $LandscapeMax

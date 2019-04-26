@@ -1,3 +1,11 @@
+function qs(query, root = document) {
+  return root.querySelector(query);
+}
+
+function qsAll(query, root = document) {
+  return root.querySelectorAll(query);
+}
+
 function fadeIn(elem, ms, cb, d = 'block') {
   if (!elem)
     return;
@@ -104,4 +112,4 @@ function elemVisCheck(elArray) {
   })
 }
 
-export {fadeIn, fadeOut, scrollTo, visChecker, resizeWatcher, elemVisCheck}
+export {qs, qsAll, fadeIn, fadeOut, scrollTo, visChecker, resizeWatcher, elemVisCheck}

@@ -90,6 +90,8 @@
     background-attachment fixed
     background-repeat no-repeat
     background-size cover
+    /html.no-smil &
+      transform translateZ(0)
   &__left
     l 0
     w 0
@@ -452,7 +454,9 @@ html.touchevents .progress
   z-index -1
   pb 58px
   opacity 0
-  transition .7s opacity, .7s visibility, .7s .7s z-index
+  transition .7s opacity, .7s visibility
+  /body.index &
+    transition .7s opacity, .7s visibility, .7s .7s z-index
   @media $desktopMax
     pb 61px
   @media $PortraitMax
@@ -472,7 +476,7 @@ html.touchevents .progress
   &__car
     max-width 1035px
     margin 0 auto
-    @media $lDesktopSmall
+    @media $desktopMax
       max-width 694px
     @media $PortraitMax
       max-width 330px

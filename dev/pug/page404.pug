@@ -1,0 +1,34 @@
+include bemto/bemto.pug
+
+doctype html
+html
+  head(lang="ru")
+    include layout/__head
+  body
+    include layout/__header
+  
+    +b('main').content._p404
+      +b('section').game.js-game
+        +e('section').result
+          +e('p').result-score.js-game-score 0
+          +e.result-text
+            p Вот это да! 
+              span.js-game-score 0
+              |  в минуту. Вы просто мастерски собираете яблоки. Приезжайте к нам на Кубань.
+            p Или хотите попробовать еще разок?
+            +e('button').result-restart.js-game-restart(aria-label="Ещё раз!")
+        +e('section').timer
+          +e('p').timer-text Используйте указатель мыши, чтобы собирать яблоки. Торопитесь, сбор урожая вот-вот закончится.
+          +e('p').timer-digits.js-game-time 01:00
+      .container
+        +b('section').page404
+          +e.img(src="img/page404.png")
+          +e.text
+            p Ой-ой, что-то полшо не так. Похоже вы неправильно набрали адрес страницы. Возможно такой страницы больше не существует. Воспользуйтесь главным меню, чтобы перейти на другую страницу.
+            p Вы также можете вернуться на 
+              a(href="#") главную страницу
+              |  сайта. 
+              span Или помочь нам со сбором урожая, кликнув на одно из появляющихся яблок.
+          
+      
+    include layout/__scripts

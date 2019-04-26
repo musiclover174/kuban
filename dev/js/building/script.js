@@ -1,4 +1,4 @@
-import {fadeIn, fadeOut, scrollTo, visChecker, resizeWatcher, elemVisCheck} from './modules/helpers'
+import {qs, qsAll, resizeWatcher, elemVisCheck} from './modules/helpers'
 import Index from './modules/index'
 import Burger from './modules/burger'
 import Contacts from './modules/contacts'
@@ -6,6 +6,7 @@ import Sticky from './modules/sticky'
 import Share from './modules/share'
 import Juices from './modules/juices'
 import Products from './modules/products'
+import Game from './modules/game';
 
 document.addEventListener('DOMContentLoaded', function(){
   
@@ -17,25 +18,57 @@ document.addEventListener('DOMContentLoaded', function(){
     index.preload()
   }
   
-  if (document.querySelector('.js-contacts-map')) {
+  if (qs('.js-contacts-map')) {
     const contacts = new Contacts('contacts-map')
     contacts.init()
   }
   
-  if (document.querySelector('.js-sticky')) {
+  if (qs('.js-sticky')) {
     const sticky = new Sticky(200, 0)
   }
 
-  if (document.querySelector('.js-iproducts')) {
+  if (qs('.js-iproducts')) {
     const products = new Products()
   }
-  
-  for (let sh of document.querySelectorAll('.js-shave')) {
-    shave(sh, sh.getAttribute('data-height'))
+
+  if (qs('.js-video')) {
+    const videos = qsAll('.js-video');
+    const popup = qs('.js-popup');
+    const popupClose = qsAll('.js-popup-close, js-popup-bg');
+    const popupContent = qs('.js-popup-content');
+
+    popupClose.forEach((elem) => {
+      elem.addEventListener('click', () => {
+        popupContent.innerHTML = '';
+        popup.classList.remove('open');
+        document.body.classList.remove('popup-open');
+      });
+    });
+
+    videos.forEach((video) => {
+      video.addEventListener('click', (e) => {
+        const videoHref = video.getAttribute('href');
+        popup.classList.add('open');
+        document.body.classList.add('popup-open');
+
+        popupContent.innerHTML = `
+          <video class="popup__video" preload autoplay>
+            <source src="${videoHref}" type='video/mp4'>
+          </video>`;
+
+        e.preventDefault();
+      });
+    })
   }
   
-  if (document.querySelectorAll('.js-share').length) {
-    for (let shBtn of document.querySelectorAll('.js-share')) {
+  window.onload = () => {
+    for (let sh of qsAll('.js-shave')) {
+      shave(sh, sh.getAttribute('data-height'))
+    }
+  }
+  
+  if (qsAll('.js-share').length) {
+    for (let shBtn of qsAll('.js-share')) {
       shBtn.addEventListener('click', (e) => {
         e.preventDefault()
       })
@@ -43,12 +76,16 @@ document.addEventListener('DOMContentLoaded', function(){
     window.share = new Share()
   }
   
-  if (document.querySelectorAll('.js-scenes').length) {
+  if (qsAll('.js-scenes').length) {
     const juices = new Juices()
   }
 
   if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
     document.querySelector('html').classList.add('ios');
+  }
+
+  if (qs('.js-game')) {
+    const game = new Game();
   }
 
   new resizeWatcher()

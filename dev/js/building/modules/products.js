@@ -9,6 +9,7 @@ export default class Products {
       speed: 1200,
       slidesPerView: 3,
       spaceBetween: 60,
+      loopedSlides: 6,
       navigation: {
         nextEl: '.js-iproducts ~ .swiper-button-next',
         prevEl: '.js-iproducts ~ .swiper-button-prev',

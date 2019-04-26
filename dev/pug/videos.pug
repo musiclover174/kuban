@@ -14,49 +14,52 @@ html
             +e.sticky.js-sticky-inner
               h1 Видео
               +b('section').breadcrumbs
-                +e.href(href="#") Главная
+                +e.href(href="/") Главная
                 +e('span').delim / 
                 
           +e('ul').list._videos
             +e.item._large
-              +e.imgover(href="https://www.youtube.com/watch?v=_sI_Ps7JSEk", data-fancybox)
+              +e.imgover.js-video(href="/video/video1.mp4")
                 +e.img.fit(src="img/video1.jpg")
               +e.content
                 +e('p').date 01 сентября
-                +e.href(href="https://www.youtube.com/watch?v=_sI_Ps7JSEk", data-fancybox)
+                +e.href.js-video(href="/video/video1.mp4")
                   span.js-shave(data-height="88") Заслуженная награда «Сделано на Кубани» Заслуженная награда «Сделано на Кубани»
                 +e('p').about.js-shave(data-height="75") Южная Соковая Компания получила диплом и право на использование знака «Сделано на Кубани». Только 46 предприятий Краснодарского края удостоились такой награды. Только 46 предприятий Краснодарского края удостоились такой награды. Только 46 предприятий Краснодарского края удостоились такой награды.
             +e.item
-              +e.imgover(href="https://www.youtube.com/watch?v=_sI_Ps7JSEk", data-fancybox)
+              +e.imgover.js-video(href="/video/video2.mp4")
                 +e.img.fit(src="img/video2.jpg")
               +e.content
                 +e('p').date 03 августа
-                +e.href(href="https://www.youtube.com/watch?v=_sI_Ps7JSEk", data-fancybox)
+                +e.href.js-video(href="/video/video2.mp4")
                   span.js-shave(data-height="76") Новые видеоролики Дары Кубани - подарок природы! Новые видеоролики Дары Кубани - подарок природы!
             +e.item
-              +e.imgover(href="https://www.youtube.com/watch?v=_sI_Ps7JSEk", data-fancybox)
+              +e.imgover.js-video(href="/video/video3.mp4")
                 +e.img.fit(src="img/video3.jpg")
               +e.content
                 +e('p').date 28 июня
-                +e.href(href="https://www.youtube.com/watch?v=_sI_Ps7JSEk", data-fancybox)
+                +e.href.js-video(href="/video/video3.mp4")
                   span.js-shave(data-height="76") Интересно знать!
             +e.item
-              +e.imgover(href="https://www.youtube.com/watch?v=_sI_Ps7JSEk", data-fancybox)
+              +e.imgover.js-video(href="/video/video4.mp4")
                 +e.img.fit(src="img/video1.jpg")
               +e.content
                 +e('p').date 14 мая
-                +e.href(href="https://www.youtube.com/watch?v=_sI_Ps7JSEk", data-fancybox)
+                +e.href.js-video(href="/video/video4.mp4")
                   span.js-shave(data-height="76") Заслуженная награда «Сделано на Кубани»
             +e.item
-              +e.imgover(href="https://www.youtube.com/watch?v=_sI_Ps7JSEk", data-fancybox)
+              +e.imgover.js-video(href="/video/video5.mp4")
                 +e.img.fit(src="img/video2.jpg")
               +e.content
                 +e('p').date 03 августа
-                +e.href(href="https://www.youtube.com/watch?v=_sI_Ps7JSEk", data-fancybox)
+                +e.href.js-video(href="/video/video5.mp4")
                   span.js-shave(data-height="76") Новые видеоролики Дары Кубани - подарок природы!
           
-        include blocks/pagination
-        
+    +b('section').popup.js-popup
+      +e('button').close.js-popup-close(type="button", aria-label="Закрыть")
+      +e('span').bg.js-popup-bg
+      +e.content.js-popup-content
+
     include layout/__footer
     
     include layout/__scripts

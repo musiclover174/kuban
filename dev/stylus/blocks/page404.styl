@@ -1,0 +1,129 @@
+.page404
+  pos relative
+  min-height 100vh
+  dfv(center, center)
+  z-index 1
+  @media $LandscapeMin
+    justify-content flex-start
+    padding 160px 0 120px
+  @media $PortraitMax
+    padding 120px 20px 80px
+  &__img
+    mb 40px
+    max-width 100%
+  &__zero
+    ml 20px
+    mr 10px
+    mt -11px
+  &__text
+    max-width 635px
+    margin 20px auto 0
+    text-align center
+    @media $LandscapeMin
+      span
+        dn()
+
+.game
+  oh()
+  pos absolute
+  l 0
+  t 0
+  size 100%
+  @media $LandscapeMin
+    dn()
+  & + .container
+    transition .7s visibility, .7s opacity
+  &.start + .container,
+  &.end + .container
+    visibility hidden
+    opacity 0
+    pointer-events none
+  &__apple
+    pos absolute
+    z-index 2
+    animation appleAnimation .7s forwards
+    &[data-type="1"]
+      size 127px 132px
+      background url('../i/g-apple1.png')
+    &[data-type="2"]
+      size 135px 134px
+      background url('../i/g-apple2.png')
+    &[data-type="3"]
+      size 133px 140px
+      background url('../i/g-apple3.png')
+    ^[-1].start &
+      cursor pointer
+  &__timer
+    w 90%
+    max-width 430px
+    pos fixed
+    z-index 1
+    b 10px
+    l 50%
+    pointer-events none
+    opacity 0
+    visibility hidden
+    text-align center
+    transform translateX(-50%)
+    transition .7s opacity, .7s visibility, .7s bottom
+    ^[-1].start &
+      opacity 1
+      visibility visible
+      b 30px
+    &-text
+      font-family $sans
+      fontify 18px 400 26px
+      mb 20px
+      @media $desktopMedium
+        fontify 17px 400 25px
+    &-digits
+      c $red
+      font-family $lf
+      fontify 48px 400 38px
+  &__result
+    w 90%
+    max-width 390px
+    pos fixed
+    t 50%
+    l 50%
+    opacity 0
+    visibility hidden
+    transform translate(-50%, -50%)
+    text-align center
+    pointer-events none
+    transition .7s opacity, .7s visibility
+    ^[-1].end &
+      opacity 1
+      visibility visible
+      pointer-events all
+    &-score
+      c $red
+      fontify 100px 400 77px
+      mb 20px
+    &-text
+      fontify 18px 400 26px
+      mb 20px
+      @media $desktopMedium
+        fontify 17px 400 25px
+    &-restart
+      db()
+      cursor pointer
+      margin 0 auto
+      size 36px 36px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBBoNESTxIoYlAAAB10lEQVRIx9WVTStEURjHf3fuHSZMXvMSEbNRLBAlMUxSUsqCsrGx5QOwYTcpsiJb5RuQjQU1YkaJJMYwafK2sGFjQYrFnWvucO+de8+s/FfnnPuc3/k/T+c8V8ZIC3xwzxdZS2GEc8ZwZ48CL4tcM6lzuUoAjzNIKWuEGWaC0Z81iXKGCLNCqT2Iizl2qAXgwiC5GjaZwZU5oRMCyXEjsyZRAY7xWmHKONMZ36TINLKEc4rNPuYT053jZtHSewER49JL7FNlr4xJVbCPpE3kn+UJDjlyBHrjhWYu0xc9nKbotiVx8ju9KbodYwDamE4n32W+GSaeEmomao3qkdgVAoGHR15J+vCzJYiBbfyggfqJCoMS9KYmUcEKAbj1Jl6EMSCpu1Un7wJ3SNMXHynQUxapuXhKgcLWTcFSXiKg3aM83DwKglp45kqbVLEs7GiJSv30VrBKCtfqQGsjCXzcCIAGCaU3EpmYrjfZlUz87y4/c45B8+o7A3SVCdFApyNMF3WEjI0eUG8b4yNiXowcwrTbwnRwTK5VgMx6xv+ozCwbKJlPCxBjwCTQxQBx+u3mrzDOA0E6KUJBQiKHQloJcsu48RFW7aOaHvpowscnUeLscai+9P+hb5MAVhgLSqCsAAAAAElFTkSuQmCC') no-repeat center
+      will-change transform
+      transition 1s transform
+      &:hover
+        transform rotate(360deg)
+    
+
+@keyframes appleAnimation {
+  0% {
+    transform translateY(20px)
+    opacity 0
+  }
+  100% {
+    transform translateY(0)
+    opacity 1
+  }
+}

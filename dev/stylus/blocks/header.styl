@@ -69,7 +69,7 @@
       @media $PortraitMedium
         fontify 35px 700 40px
       &.active
-        color black
+        color #2b7308
       &:hover
         l 20px
         
@@ -221,9 +221,9 @@
     transition .7s height
       
 html:not(.touchevents) .burger
-  &.open:hover
-    transform rotate(360deg)
-    transform-origin 50% 50%
+  // &.open:hover
+  //   transform rotate(360deg)
+  //   transform-origin 50% 50%
   &:not(.open):hover
     &:before
       t 47px
@@ -300,7 +300,6 @@ html:not(.touchevents) .burger
   transition .7s filter
   
 body.burgeropen
-  overflow hidden
   .logo
     filter none
   .burger__shadow
@@ -313,8 +312,13 @@ body.burgeropen
     bgc transparent
   .logo
     pos fixed
-    bgc white
-    
+    // bgc white
+
+html.no-touchevents
+  body.burgeropen
+    overflow hidden !important
+    mr 17px
+
 html.touchevents
   .burger
     &:not(.open):hover

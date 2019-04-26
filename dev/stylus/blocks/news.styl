@@ -131,12 +131,9 @@
     size 100%
     object-fit cover
     font-family 'object-fit: cover;'
-    transition .7s transform
-    will-change transform
-    -webkit-backface-visibility hidden
-    transform scale(1.017) translateZ(0)
+    transition .7s opacity
     ^[0]__item:hover &
-      transform scale(1) translateZ(0)
+      opacity .8
   &__content
     w calc(55% + 60px)
     pos relative
@@ -235,3 +232,63 @@
       transform scaleX(-1)
     &:hover:after
       animation arrAnimation 2s infinite steps(30)
+
+
+.popup
+  pos fixed
+  z-index -1
+  t 0
+  l 0
+  r 0
+  b 0
+  pointer-event none
+  &.open
+    z-index 9999
+    pointer-events all
+  &__close
+    pos absolute
+    r 0
+    t 0
+    bgc white
+    size 130px
+    z-index 1
+    opacity 0
+    cursor pointer
+    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAQAAABuvaSwAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBBoOLCCe4bTbAAAAqUlEQVQoz5XTsRnCIBCG4Q9ZgBEyiYxAkxmcwVns7bBwBNpskQGcQYuIAe4Ij9fe2/z/PWemOzcS4/FcrHsRWViHNHK1bmUZck9kJlkHI/6lYB0c8x/NuM8LumOdV7TEkje0xjUXFMykB0JSDYPnCQR515NS1rt3G4nPPAgEIr5d1QE3OpP03mucaaf3EpdU5TtuqcIz1qjgG+7Rhlt3TCtu3YgW3PzzsB/zcW1aAJVLHgAAAABJRU5ErkJggg==') no-repeat center white
+    @media $PortraitMax
+      size 84px
+    ^[0].open &
+      opacity 1
+      transition .7s .7s opacity
+    &:hover
+      bgc white
+  &__bg
+    pos absolute
+    l 0
+    t 100%
+    size 100%
+    bgc rgba(255, 255, 255, .92)
+    transition .7s top
+    ^[0].open &
+      t 0
+  &__content
+    pos absolute
+    t 0
+    l 0
+    r 0
+    b 0
+    opacity 0
+    ^[0].open &
+      opacity 1
+      transition .7s .7s opacity
+  &__video
+    pos absolute
+    w 100%
+    min-height 100%
+    b 0
+    l 50%
+    transform translateX(-50%)
+
+.no-touchevents .popup-open
+  overflow hidden
+  mr 17px
