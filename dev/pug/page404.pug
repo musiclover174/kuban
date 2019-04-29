@@ -11,12 +11,10 @@ html
       +b('section').game.js-game
         +e('section').result
           +e('p').result-score.js-game-score 0
-          +e.result-text
-            p Вот это да! 
-              span.js-game-score 0
-              |  в минуту. Вы просто мастерски собираете яблоки. Приезжайте к нам на Кубань.
+          +e.result-text.js-game-restext
+            p Вот это да! 0 в минуту. Вы просто мастерски собираете яблоки. Приезжайте к нам на Кубань.
             p Или хотите попробовать еще разок?
-            +e('button').result-restart.js-game-restart(aria-label="Ещё раз!")
+          +e('button').result-restart.js-game-restart(aria-label="Ещё раз!")
         +e('section').timer
           +e('p').timer-text Используйте указатель мыши, чтобы собирать яблоки. Торопитесь, сбор урожая вот-вот закончится.
           +e('p').timer-digits.js-game-time 01:00

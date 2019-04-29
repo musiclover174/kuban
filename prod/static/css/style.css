@@ -1459,6 +1459,12 @@ button.swiper-pagination-bullet {
 .header {
   position: relative;
   z-index: 7;
+  -webkit-transition: 0.3s opacity;
+  transition: 0.3s opacity;
+}
+body.game-start .header {
+  opacity: 0;
+  pointer-events: none;
 }
 .header__popup {
   position: fixed;
@@ -5560,6 +5566,7 @@ html.no-smil .catalog__elem:last-child .catalog__elem-img {
   pointer-events: all;
 }
 .game__result-score {
+  font-family: "LifehackBasic";
   color: #6c3225;
   font-size: 100px;
   font-weight: 400;

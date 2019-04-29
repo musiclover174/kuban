@@ -1,9 +1,10 @@
-import { qs, qsAll } from './helpers';
+import { qs } from './helpers';
 
 const gameField = qs('.js-game');
 const gameTimer = qs('.js-game-time');
-const gameScore = qsAll('.js-game-score');
+const gameScore = qs('.js-game-score');
 const gameRestart = qs('.js-game-restart');
+const gameRestext = qs('.js-game-restext');
 
 function randomInteger(min, max) {
   var rand = min - 0.5 + Math.random() * (max - min + 1)
@@ -65,7 +66,7 @@ export default class Game {
       this.apples.push(new Apple());
     }
 
-    setTimeout(this.observer.bind(this), this.gameStart ? 200 : 1000);
+    setTimeout(this.observer.bind(this), this.gameStart ? (600 * (80 - this.points) / 80) : 1000);
   }
 
   eventListerer() {
@@ -88,6 +89,7 @@ export default class Game {
         gameField.classList.add('start');
         this.timerStart();
         this.gameStart = true;
+        document.body.classList.add('game-start');
       }
     }, false)
 
@@ -99,6 +101,25 @@ export default class Game {
     });
   }
 
+  textChanger(points) {
+    if (points > 60) {
+      gameRestext.innerHTML = `
+        <p>Вот это да! ${points} в минуту. Вы там не жульничали, случайно? Возможно все дело в том, что Кубань у вас в крови.</p>
+        <p>Вам не за чем пробовать еще раз. Если только вы не хотите устроить мастер-класс.</p>
+      `;
+    } else if (points >= 40) {
+      gameRestext.innerHTML = `
+        <p>Отличный результат. ${points} в минуту. Вы очень хорошо собираете яблоки. Приезжайте к нам на Кубань.</p>
+        <p>Или хотите попробовать еще разок?</p>
+      `;
+    } else {
+      gameRestext.innerHTML = `
+        <p>Что-то слабовато. Всего ${points} в минуту. Вы явно еще не бывали на Кубани. Или вы просто съели половину собранных яблок?</p>
+        <p>Хотите попробовать еще разок?</p>
+      `;
+    }
+  }
+
   timerStart() {
     const minutes = ('0' + Math.floor(this.time / 60)).slice(-2);
     const secs = ('0' + this.time % 60).slice(-2);
@@ -108,7 +129,8 @@ export default class Game {
       setTimeout(this.timerStart.bind(this), 1000);
     } else {
       gameTimer.textContent = `00:00`;
-      gameScore.forEach(elem => elem.textContent = this.points);
+      this.textChanger(this.points);
+      gameScore.textContent = this.points;
 
       this.gameEnd = true;
       gameField.classList.remove('start');
@@ -119,6 +141,8 @@ export default class Game {
   }
 
   gameDrop() {
+    document.body.classList.remove('game-start');
+    gameTimer.textContent = `01:00`;
     this.apples.forEach(apple => apple.destroy());
     this.gameStart = false;
     this.points = 0;

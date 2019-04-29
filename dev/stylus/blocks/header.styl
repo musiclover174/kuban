@@ -1,6 +1,10 @@
 .header
   pos relative
   z-index 7
+  transition .3s opacity
+  /body.game-start &
+    opacity 0
+    pointer-events none
   &__popup
     pos fixed
     z-index 1
