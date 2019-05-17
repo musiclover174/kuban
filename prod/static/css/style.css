@@ -1487,7 +1487,7 @@ body.game-start .header {
   -webkit-transition: 0.7s opacity;
   transition: 0.7s opacity;
 }
-@media (max-width: 1600px) {
+@media (max-width: 1600px), (max-height: 800px) {
   .header__popup {
     -webkit-box-align: start;
     -ms-flex-align: start;
@@ -1513,7 +1513,7 @@ body.game-start .header {
 }
 @media (max-width: 1600px) {
   .header__popup-inner {
-    padding: 180px 40px 180px;
+    padding: 70px 40px;
   }
 }
 @media (max-width: 1170px) {
@@ -1665,6 +1665,20 @@ body.game-start .header {
 @media (max-width: 500px) {
   .socials__title {
     margin-top: 40px;
+  }
+}
+.socials__title-href {
+  color: #2b7308;
+  border-bottom: 1px solid rgba(43,115,8,0.4);
+  -webkit-transition: 0.5s border;
+  transition: 0.5s border;
+}
+.socials__title-href:hover {
+  border-color: transparent;
+}
+@media (max-width: 767px) {
+  .socials__title span {
+    display: none;
   }
 }
 .socials__list {
@@ -1938,9 +1952,16 @@ html:not(.touchevents) .burger:not(.open):hover html:not(.touchevents) .burger__
   transition: 0.7s filter;
   transition: 0.7s filter, 0.7s -webkit-filter;
 }
-body.burgeropen .logo {
-  -webkit-filter: none;
-  filter: none;
+@media (min-width: 1601px) {
+  body.burgeropen .logo {
+    -webkit-filter: none;
+    filter: none;
+  }
+}
+@media (max-width: 1600px) {
+  body.burgeropen .logo {
+    z-index: 0;
+  }
 }
 body.burgeropen .burger__shadow {
   height: 100%;
@@ -4072,7 +4093,7 @@ html.ios .bg__right {
   top: 100%;
   width: 100%;
   height: 100%;
-  background-color: rgba(255,255,255,0.92);
+  background-color: #fff;
   -webkit-transition: 0.7s top;
   transition: 0.7s top;
 }

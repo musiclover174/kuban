@@ -16,7 +16,7 @@
     df(center)
     opacity 0
     transition .7s opacity
-    @media $lDesktopSmall
+    @media (max-width:1600px), (max-height:800px)
       align-items flex-start
     &-inner
       df()
@@ -26,7 +26,7 @@
       max-width 1744px
       margin 0 auto
       @media $lDesktopSmall
-        padding 180px 40px 180px
+        padding 70px 40px
       @media $desktopMin
         flex-direction column
       @media $PortraitMedium
@@ -91,6 +91,15 @@
       fontify 21px 400 29px
     @media $PortraitMedium
       mt 40px
+    &-href
+      color $green
+      border-bottom 1px solid alpha($green, .4)
+      transition .5s border
+      &:hover
+        border-color transparent
+    span
+      @media $LandscapeMin
+        dn()
   &__list
     &:not(&_small)
       mt 45px
@@ -305,7 +314,10 @@ html:not(.touchevents) .burger
   
 body.burgeropen
   .logo
-    filter none
+    @media $lDesktopSmallFrom
+      filter none
+    @media $lDesktopSmall
+      z-index 0
   .burger__shadow
     height 100%
   .header__popup

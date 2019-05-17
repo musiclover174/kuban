@@ -22,7 +22,7 @@ class Apple {
   create() {
     this.element = document.createElement('span');
     this.element.className = 'game__apple';
-    this.element.style = `top: ${randomInteger(1, window.innerHeight - 140)}px; left: ${randomInteger(1, window.innerWidth - 135)}px;`;
+    this.element.style = `top: ${randomInteger(1, window.innerHeight - 160)}px; left: ${randomInteger(1, window.innerWidth - 135)}px;`;
     this.element.dataset.type = randomInteger(1, 3);
     gameField.appendChild(this.element);
   }
@@ -52,6 +52,13 @@ export default class Game {
 
     this.observer();
     this.eventListerer();
+
+    if (window.location.hash && window.location.hash.substring(1) === 'wantgame' && window.innerWidth > 767) {
+      gameField.classList.add('start');
+      this.timerStart();
+      this.gameStart = true;
+      document.body.classList.add('game-start');
+    }
   }
 
   observer() {
@@ -66,7 +73,7 @@ export default class Game {
       this.apples.push(new Apple());
     }
 
-    setTimeout(this.observer.bind(this), this.gameStart ? (600 * (80 - this.points) / 80) : 1000);
+    setTimeout(this.observer.bind(this), this.gameStart ? (150 + 150 * (80 - this.points) / 80) : 1000);
   }
 
   eventListerer() {
@@ -102,12 +109,12 @@ export default class Game {
   }
 
   textChanger(points) {
-    if (points > 60) {
+    if (points > 75) {
       gameRestext.innerHTML = `
         <p>Вот это да! ${points} в минуту. Вы там не жульничали, случайно? Возможно все дело в том, что Кубань у вас в крови.</p>
         <p>Вам не за чем пробовать еще раз. Если только вы не хотите устроить мастер-класс.</p>
       `;
-    } else if (points >= 40) {
+    } else if (points >= 55) {
       gameRestext.innerHTML = `
         <p>Отличный результат. ${points} в минуту. Вы очень хорошо собираете яблоки. Приезжайте к нам на Кубань.</p>
         <p>Или хотите попробовать еще разок?</p>

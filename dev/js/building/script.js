@@ -7,6 +7,7 @@ import Share from './modules/share'
 import Juices from './modules/juices'
 import Products from './modules/products'
 import Game from './modules/game';
+import Video from './modules/video';
 
 document.addEventListener('DOMContentLoaded', function(){
   
@@ -32,33 +33,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   if (qs('.js-video')) {
-    const videos = qsAll('.js-video');
-    const popup = qs('.js-popup');
-    const popupClose = qsAll('.js-popup-close, js-popup-bg');
-    const popupContent = qs('.js-popup-content');
-
-    popupClose.forEach((elem) => {
-      elem.addEventListener('click', () => {
-        popupContent.innerHTML = '';
-        popup.classList.remove('open');
-        document.body.classList.remove('popup-open');
-      });
-    });
-
-    videos.forEach((video) => {
-      video.addEventListener('click', (e) => {
-        const videoHref = video.getAttribute('href');
-        popup.classList.add('open');
-        document.body.classList.add('popup-open');
-
-        popupContent.innerHTML = `
-          <video class="popup__video" preload autoplay>
-            <source src="${videoHref}" type='video/mp4'>
-          </video>`;
-
-        e.preventDefault();
-      });
-    })
+    const videos = new Video('.js-video', '.js-popup', '.js-popup-close, js-popup-bg', '.js-popup-content');
   }
   
   window.onload = () => {
