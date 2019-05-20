@@ -105,6 +105,8 @@
           min-height 236px
       &_large ^[0]__date
         mb 11px
+      &_large ^[0]__duration
+        mt 28px
       &_large ^[0]__href
         fontify 36px 400 44px
         @media $desktopMax
@@ -155,9 +157,13 @@
       padding 25px 27px
       min-height inherit
   &__date
+    mb 8px
+  &__duration
+    mt 18px
+  &__date,
+  &__duration
     font-family $sans
     fontify 11px 700 11px
-    mb 8px
     text-transform uppercase
     letter-spacing .12em
   &__href

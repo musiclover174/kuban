@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function(){
         elVisArray = ['.about__img', '.about p, .about__clients, .catalog__img, .catalog__elem-img']
   
   if (document.body.classList.contains('index')) {
-    const index = new Index(30)
+    const index = new Index(22)
     index.preload()
   }
   
@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', function(){
     const videos = new Video('.js-video', '.js-popup', '.js-popup-close, js-popup-bg', '.js-popup-content');
   }
   
-  window.onload = () => {
-    for (let sh of qsAll('.js-shave')) {
-      shave(sh, sh.getAttribute('data-height'))
-    }
-  }
+  // window.onload = () => {
+  //   for (let sh of qsAll('.js-shave')) {
+  //     shave(sh, sh.getAttribute('data-height'))
+  //   }
+  // }
   
   if (qsAll('.js-share').length) {
     for (let shBtn of qsAll('.js-share')) {

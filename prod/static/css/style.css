@@ -2351,7 +2351,7 @@ html.touchevents .burger:not(.open):hover .burger__meat {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  display: none;
+  opacity: 0;
 }
 @media (max-width: 1400px) {
   .opening__img {
@@ -2364,7 +2364,7 @@ html.touchevents .burger:not(.open):hover .burger__meat {
   }
 }
 .opening__img:first-child {
-  display: block;
+  opacity: 1;
 }
 .js-imgloader {
   height: 0;
@@ -3062,6 +3062,44 @@ body.index .products {
     padding-bottom: 30px;
   }
 }
+.products__mobile {
+  position: absolute;
+  top: 19%;
+  left: 20px;
+  right: 20px;
+  color: #fff;
+  display: none;
+}
+@media (max-width: 670px) {
+  .products__mobile {
+    display: block;
+  }
+}
+.products__mobile-title {
+  font-family: "LifehackBasic";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 50px;
+  text-align: center;
+  visibility: visible;
+  opacity: 1;
+}
+.products__mobile-title span {
+  position: relative;
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 100%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 100%);
+  opacity: 0;
+  -webkit-transition: 0.75s opacity, 0.75s -webkit-clip-path;
+  transition: 0.75s opacity, 0.75s -webkit-clip-path;
+  transition: 0.75s clip-path, 0.75s opacity;
+  transition: 0.75s clip-path, 0.75s opacity, 0.75s -webkit-clip-path;
+}
+.products__mobile-title span + span {
+  margin-top: -10px;
+}
 .products_card {
   bottom: 0;
   left: 0;
@@ -3100,6 +3138,14 @@ body.index .products {
 }
 .products__car .swiper-slide {
   text-align: center;
+}
+.products__car .swiper-slide-prev,
+.products__car .swiper-slide-next,
+.products__car .swiper-slide-next + .swiper-slide,
+.products__car .swiper-slide-next + .swiper-slide + .swiper-slide {
+  opacity: 0;
+  -webkit-transition: 0.7s opacity;
+  transition: 0.7s opacity;
 }
 .products .swiper-button-prev {
   left: 54px;
@@ -3234,6 +3280,37 @@ body.scrollEnd .products {
   visibility: visible;
   -webkit-transition: 0.7s opacity, 0.7s visibility;
   transition: 0.7s opacity, 0.7s visibility;
+}
+body.scrollEnd .products .swiper-slide-prev,
+body.scrollEnd .products .swiper-slide-next,
+body.scrollEnd .products .swiper-slide-next + .swiper-slide,
+body.scrollEnd .products .swiper-slide-next + .swiper-slide + .swiper-slide {
+  opacity: 1;
+}
+body.scrollEnd .products .swiper-slide-prev {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+body.scrollEnd .products .swiper-slide-next {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+body.scrollEnd .products .swiper-slide-next + .swiper-slide {
+  -webkit-transition-delay: 0.45s;
+  transition-delay: 0.45s;
+}
+body.scrollEnd .products .swiper-slide-next + .swiper-slide + .swiper-slide {
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+body.scrollEnd .products__mobile-title {
+  visibility: visible;
+  opacity: 1;
+}
+body.scrollEnd .products__mobile-title span {
+  opacity: 1;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
 }
 body.scrollEnd .handler,
 body.scrollEnd .handler__img {
@@ -3786,6 +3863,9 @@ html.ios .bg__right {
   .news__item_large .news__date {
     margin-bottom: 11px;
   }
+  .news__item_large .news__duration {
+    margin-top: 28px;
+  }
   .news__item_large .news__href {
     font-size: 36px;
     font-weight: 400;
@@ -3896,11 +3976,17 @@ html.ios .bg__right {
   }
 }
 .news__date {
+  margin-bottom: 8px;
+}
+.news__duration {
+  margin-top: 18px;
+}
+.news__date,
+.news__duration {
   font-family: "PT Sans";
   font-size: 11px;
   font-weight: 700;
   line-height: 11px;
-  margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }

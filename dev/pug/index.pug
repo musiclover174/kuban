@@ -18,7 +18,7 @@ html
         
       +b('section').opening
         - var n = 0;
-        while n < 73
+        while n < 67
           +e.img.js-opening-img(src="img/load/" + (n++) + ".png")
           
       +b('section').bg
@@ -65,6 +65,12 @@ html
             +e('p').text-dsc Полезные соки и нектары из ягод, фруктов и овощей на любой вкус.
               
       +b('section').products
+        +e.mobile
+          +e('p').mobile-title 
+            span Вспомните ваше
+            span лето! Сделайте
+            span глоток солнечного
+            span дня!
         +e.car.swiper-container.js-iproducts
           .swiper-wrapper
             .swiper-slide

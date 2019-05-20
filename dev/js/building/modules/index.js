@@ -7,6 +7,7 @@ export default class Index {
     this.delay = delay
     this.preloadBlock = document.querySelector('.js-imgloader')
   }
+
   preload() {
     Pace.on('hide', () => {
       fadeOut(this.block, 600, () => {
@@ -31,6 +32,7 @@ export default class Index {
         document.body.classList.add('scroll') : document.body.classList.remove('scroll')
     })
   }
+  
   animate() {
     let elems = document.querySelectorAll('.js-opening-img'),
         delay = this.delay
@@ -129,8 +131,8 @@ export default class Index {
   scrollLib() {
     let scrollTop, ceil, percentage,
         imgQuantity = 100,
-        lostFramesPerc = Math.floor(window.innerHeight / 200) / imgQuantity,
-        scrollToPicture = 200 - lostFramesPerc * 200,
+        lostFramesPerc = window.innerHeight / imgQuantity,
+        scrollToPicture = 100 - lostFramesPerc,
         curActive = 1,
         progressEl = document.querySelector('.js-progress'),
         bgLeft = document.querySelector('.js-bgleft'),
@@ -139,7 +141,7 @@ export default class Index {
         rightImg = document.querySelector('.js-rightImg'),
         _t = this
 
-    document.querySelector('.js-img-handler').style.height = imgQuantity * 200 + 'px'
+    document.querySelector('.js-img-handler').style.height = imgQuantity * 100 + 'px'
 
     const onScrollHandler = function() {
       scrollTop = document.documentElement.scrollTop || document.body.scrollTop

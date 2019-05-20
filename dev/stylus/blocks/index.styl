@@ -62,13 +62,13 @@
     t 50%
     l 50%
     transform translate(-50%, -50%)
-    dn()
+    opacity 0
     @media $desktopMax
       h 1000px
     @media $PortraitMax
       h 100vh
     &:first-child
-      db()
+      opacity 1
 
 .js-imgloader
   h 0
@@ -461,6 +461,31 @@ html.touchevents .progress
     pb 61px
   @media $PortraitMax
     pb 30px
+  &__mobile
+    pos absolute
+    t 19%
+    l 20px
+    r 20px
+    c white
+    dn()
+    @media $PortraitMax
+      db()
+    &-title
+      font-family $lf
+      fontify 36px 400 50px
+      text-align center
+      visibility visible
+      opacity 1
+      span
+        pos relative
+        white-space nowrap
+        db()
+        w 100%
+        clip-path polygon(100% 0, 100% 100%, 0 100%, 0 100%)
+        opacity 0
+        transition .75s clip-path, .75s opacity
+        & + span
+          mt -10px
   &_card
     b 0 
     l 0
@@ -486,6 +511,12 @@ html.touchevents .progress
       overflow visible
     .swiper-slide
       text-align center
+    .swiper-slide-prev,
+    .swiper-slide-next,
+    .swiper-slide-next + .swiper-slide,
+    .swiper-slide-next + .swiper-slide + .swiper-slide
+      opacity 0
+      transition .7s opacity
   .swiper-button-prev
     l 54px
     @media $PortraitMax
@@ -577,6 +608,25 @@ body.scrollEnd
     opacity 1
     visibility visible
     transition .7s opacity, .7s visibility
+    .swiper-slide-prev,
+    .swiper-slide-next,
+    .swiper-slide-next + .swiper-slide,
+    .swiper-slide-next + .swiper-slide + .swiper-slide
+      opacity 1
+    .swiper-slide-prev
+      transition-delay .15s
+    .swiper-slide-next
+      transition-delay .3s
+    .swiper-slide-next + .swiper-slide
+      transition-delay .45s
+    .swiper-slide-next + .swiper-slide + .swiper-slide
+      transition-delay .6s
+    &__mobile-title
+      visibility visible
+      opacity 1
+      span
+        opacity 1
+        clip-path polygon(100% 0, 100% 100%, 0 100%, 0 0)
   .handler,
   .handler__img
     opacity 0
