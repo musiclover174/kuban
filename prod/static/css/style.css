@@ -3139,10 +3139,10 @@ body.index .products {
 .products__car .swiper-slide {
   text-align: center;
 }
-.products__car .swiper-slide-prev,
-.products__car .swiper-slide-next,
-.products__car .swiper-slide-next + .swiper-slide,
-.products__car .swiper-slide-next + .swiper-slide + .swiper-slide {
+body.index .products__car .swiper-slide-prev,
+body.index .products__car .swiper-slide-next,
+body.index .products__car .swiper-slide-next + .swiper-slide,
+body.index .products__car .swiper-slide-next + .swiper-slide + .swiper-slide {
   opacity: 0;
   -webkit-transition: 0.7s opacity;
   transition: 0.7s opacity;

@@ -511,12 +511,13 @@ html.touchevents .progress
       overflow visible
     .swiper-slide
       text-align center
-    .swiper-slide-prev,
-    .swiper-slide-next,
-    .swiper-slide-next + .swiper-slide,
-    .swiper-slide-next + .swiper-slide + .swiper-slide
-      opacity 0
-      transition .7s opacity
+    /body.index &
+      .swiper-slide-prev,
+      .swiper-slide-next,
+      .swiper-slide-next + .swiper-slide,
+      .swiper-slide-next + .swiper-slide + .swiper-slide
+        opacity 0
+        transition .7s opacity
   .swiper-button-prev
     l 54px
     @media $PortraitMax
