@@ -59,7 +59,8 @@
   &__juices
     pos relative
     transition .7s opacity
-    @media $desktopMin
+    // @media $desktopMin
+    @media $desktopMax
       transform scale(.7)
     @media $LandscapeMin
       dn()
@@ -78,7 +79,8 @@
         pos fixed
         t 50%
         transform translateY(-50%)
-        @media $desktopMin
+        // @media $desktopMin
+        @media $desktopMax
           transform translateY(-50%) scale(.7)
       &.scene2
         & ^[1]-element_element1

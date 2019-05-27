@@ -5200,7 +5200,7 @@ html.no-smil .catalog__elem:last-child .catalog__elem-img {
   -webkit-transition: 0.7s opacity;
   transition: 0.7s opacity;
 }
-@media (max-width: 1170px) {
+@media (max-width: 1400px) {
   .card__juices {
     -webkit-transform: scale(0.7);
     transform: scale(0.7);
@@ -5370,7 +5370,7 @@ html.no-smil .catalog__elem:last-child .catalog__elem-img {
   left: 250px;
   top: 134px;
 }
-@media (min-width: 768px) and (max-width: 1170px) {
+@media (min-width: 768px) and (max-width: 1400px) {
   .card__juices.fixed {
     -webkit-transform: translateY(-50%) scale(0.7);
     transform: translateY(-50%) scale(0.7);
