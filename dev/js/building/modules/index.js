@@ -121,7 +121,7 @@ export default class Index {
     new ScrollMagic.Scene({
       triggerElement: '.handler__texts',
       offset: h * .76,
-      duration: h * .05,
+      duration: h * .10,
       triggerHook: 'onLeave'
     })
       .setClassToggle('.handler__texts', 'text6')
